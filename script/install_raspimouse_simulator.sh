@@ -37,9 +37,9 @@ cp -r $workdir/ode-0.13/drawstuff ./
 
 
 cd $workdir
-wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial_ROBOMECH2019/master/EXE/test.csv
-wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial_ROBOMECH2019/master/EXE/rtc.conf
-wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial_ROBOMECH2019/master/EXE/RaspberryPiMouseSimulator.conf
+wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial/master/EXE/test.csv
+wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial/master/EXE/rtc.conf
+wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial/master/EXE/RaspberryPiMouseSimulator.conf
 cp test.csv $workdir/RasPiMouseSimulatorRTC/build/
 cp rtc.conf $workdir/RasPiMouseSimulatorRTC/build/
 cp RaspberryPiMouseSimulator.conf $workdir/RasPiMouseSimulatorRTC/build/
