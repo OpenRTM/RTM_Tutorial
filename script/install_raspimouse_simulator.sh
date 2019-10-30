@@ -40,6 +40,6 @@ cd $workdir
 wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial/master/EXE/test.csv
 wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial/master/EXE/rtc.conf
 wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial/master/EXE/RaspberryPiMouseSimulator.conf
-cp test.csv $workdir/RasPiMouseSimulatorRTC/build/
-cp rtc.conf $workdir/RasPiMouseSimulatorRTC/build/
-cp RaspberryPiMouseSimulator.conf $workdir/RasPiMouseSimulatorRTC/build/
+mv test.csv $workdir/RasPiMouseSimulatorRTC/build/
+mv rtc.conf $workdir/RasPiMouseSimulatorRTC/build/
+mv RaspberryPiMouseSimulator.conf $workdir/RasPiMouseSimulatorRTC/build/
