@@ -1,0 +1,16 @@
+# pkg-config source file
+
+prefix=C:/workspace/choreonoid/build/install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+subdir=choreonoid-1.8
+includedir=${prefix}/include
+sharedir=C:/workspace/choreonoid/build/install/share
+
+Name: choreonoid-util
+Description: Choreonoid Util library
+Version: 1.8.0
+Requires: 
+Conflicts:
+Libs: -L${libdir} -lCnoidUtil -lboost_filesystem -lboost_system
+Cflags: -I${includedir}

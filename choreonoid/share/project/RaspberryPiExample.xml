@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<rts:RtsProfile rts:version="0.2" rts:id="RTSystem:AIST:RTSystem:1.0.0" xmlns:rts="http://www.openrtp.org/namespaces/rts" xmlns:rtsExt="http://www.openrtp.org/namespaces/rts_ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<rts:Components xsi:type="rtsExt:component_ext" rts:isRequired="false" rts:compositeType="None" rts:activeConfigurationSet="default" rts:instanceName="RaspberryPiMouseIo0" rts:pathUri="localhost/RaspberryPiMouseIo0.rtc" rts:id="RTC:AIST:Simulator:RaspberryPiMouseIo0:1.0.0">
+		<rtsExt:Properties rtsExt:value="true" rtsExt:name="OpenRTM_NS" />
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="RaspberryPiMouseIo0.velocity">
+			<rtsExt:Properties rtsExt:value="DataInPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVelocity2D:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="Any" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVelocity2D:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="RaspberryPiMouseIo0.ir_sensor">
+			<rtsExt:Properties rtsExt:value="DataOutPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedShortSeq:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.io_mode" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedShortSeq:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="RaspberryPiMouseIo0.distance">
+			<rtsExt:Properties rtsExt:value="DataOutPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedDoubleSeq:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.io_mode" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedDoubleSeq:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:ConfigurationSets rts:id="default" />
+		<rts:ExecutionContexts xsi:type="rtsExt:execution_context_ext" rts:id="0" rts:rate="1000000" rts:kind="PERIODIC">
+			<rtsExt:Properties rtsExt:value="YES" rtsExt:name="sync_transition" />
+			<rtsExt:Properties rtsExt:value="0.5" rtsExt:name="transition_timeout" />
+			<rtsExt:Properties rtsExt:value="PeriodicExecutionContext" rtsExt:name="type" />
+		</rts:ExecutionContexts>
+		<rts:ExecutionContexts xsi:type="rtsExt:execution_context_ext" rts:id="1" rts:rate="1000" rts:kind="PERIODIC">
+			<rtsExt:Properties rtsExt:value="YES" rtsExt:name="sync_transition" />
+			<rtsExt:Properties rtsExt:value="0.5" rtsExt:name="transition_timeout" />
+			<rtsExt:Properties rtsExt:value="SimulatorExecutionContext" rtsExt:name="type" />
+		</rts:ExecutionContexts>
+		<rtsExt:Location rtsExt:direction="RIGHT" rtsExt:width="-1" rtsExt:height="-1" rtsExt:x="250" rtsExt:y="140" />
+	</rts:Components>
+	<rts:Components xsi:type="rtsExt:component_ext" rts:isRequired="false" rts:compositeType="None" rts:activeConfigurationSet="default" rts:instanceName="RobotController0" rts:pathUri="localhost/RobotController0.rtc" rts:id="RTC:AIST:Controller:RobotController0:1.0.0">
+		<rtsExt:Properties rtsExt:value="true" rtsExt:name="OpenRTM_NS" />
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="RobotController0.in">
+			<rtsExt:Properties rtsExt:value="DataInPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedShortSeq:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="Any" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="push,pull" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr,direct,shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="RobotController0.out">
+			<rtsExt:Properties rtsExt:value="DataOutPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVelocity2D:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="flush,new,periodic" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="push,pull" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr,direct,shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:ConfigurationSets rts:id="default">
+			<rts:ConfigurationData rts:data="0.0" rts:name="speed_x" />
+			<rts:ConfigurationData rts:data="0.0" rts:name="speed_r" />
+			<rts:ConfigurationData rts:data="30" rts:name="stop_d" />
+		</rts:ConfigurationSets>
+		<rts:ConfigurationSets rts:id="__widget__">
+			<rts:ConfigurationData rts:data="slider.0.01" rts:name="speed_x" />
+			<rts:ConfigurationData rts:data="slider.0.01" rts:name="speed_r" />
+			<rts:ConfigurationData rts:data="text" rts:name="stop_d" />
+		</rts:ConfigurationSets>
+		<rts:ConfigurationSets rts:id="__constraints__">
+			<rts:ConfigurationData rts:data="-1.5&lt;x&lt;1.5" rts:name="speed_x" />
+			<rts:ConfigurationData rts:data="-2.0&lt;x&lt;2.0" rts:name="speed_r" />
+		</rts:ConfigurationSets>
+		<rts:ConfigurationSets rts:id="__type__">
+			<rts:ConfigurationData rts:data="double" rts:name="speed_x" />
+			<rts:ConfigurationData rts:data="double" rts:name="speed_r" />
+			<rts:ConfigurationData rts:data="int" rts:name="stop_d" />
+		</rts:ConfigurationSets>
+		<rts:ExecutionContexts xsi:type="rtsExt:execution_context_ext" rts:id="0" rts:rate="1000" rts:kind="PERIODIC">
+			<rtsExt:Properties rtsExt:value="YES" rtsExt:name="sync_transition" />
+			<rtsExt:Properties rtsExt:value="0.5" rtsExt:name="transition_timeout" />
+			<rtsExt:Properties rtsExt:value="PeriodicExecutionContext" rtsExt:name="type" />
+			<rtsExt:Properties rtsExt:value="1000" rtsExt:name="rate" />
+			<rtsExt:Properties rtsExt:value="" rtsExt:name="name" />
+		</rts:ExecutionContexts>
+		<rtsExt:Location rtsExt:direction="RIGHT" rtsExt:width="-1" rtsExt:height="-1" rtsExt:x="0" rtsExt:y="0" />
+	</rts:Components>
+	<rts:DataPortConnectors xsi:type="rtsExt:dataport_connector_ext" rts:connectorId="da0b7d20-b576-4433-aca0-75b62b71e74b" rts:name="RobotController0.out_RaspberryPiMouseIo0.velocity" rts:dataType="IDL:RTC/TimedVelocity2D:1.0" rts:interfaceType="corba_cdr" rts:dataflowType="push" rts:subscriptionType="flush">
+		<rts:sourceDataPort xsi:type="rtsExt:target_port_ext" rts:portName="RobotController0.out" rts:instanceName="RobotController0" rts:componentId="RTC:AIST:Controller:RobotController0:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/RobotController0.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:sourceDataPort>
+		<rts:targetDataPort xsi:type="rtsExt:target_port_ext" rts:portName="RaspberryPiMouseIo0.velocity" rts:instanceName="RaspberryPiMouseIo0" rts:componentId="RTC:AIST:Simulator:RaspberryPiMouseIo0:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/RaspberryPiMouseIo0.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:targetDataPort>
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVelocity2D:1.0" rtsExt:name="dataport.data_type" />
+		<rtsExt:Properties rtsExt:value="corba_cdr" rtsExt:name="dataport.interface_type" />
+		<rtsExt:Properties rtsExt:value="push" rtsExt:name="dataport.dataflow_type" />
+		<rtsExt:Properties rtsExt:value="flush" rtsExt:name="dataport.subscription_type" />
+		<rtsExt:Properties rtsExt:value="little,big" rtsExt:name="dataport.serializer.cdr.endian" />
+		<rtsExt:Properties rtsExt:value="" rtsExt:name="dataport.outport" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVelocity2D:1.0" rtsExt:name="dataport.inport.data_type" />
+		<rtsExt:Properties rtsExt:value="{1:(82,19),2:(87,19),3:(183,19),4:(183,159),5:(279,159),6:(284,159)}" rtsExt:name="POSITION" />
+	</rts:DataPortConnectors>
+</rts:RtsProfile>

@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<rts:RtsProfile rts:version="0.2" rts:id="RTSystem:AIST:RTSystem:1.0.0" xmlns:rts="http://www.openrtp.org/namespaces/rts" xmlns:rtsExt="http://www.openrtp.org/namespaces/rts_ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<rts:Components xsi:type="rtsExt:component_ext" rts:isRequired="false" rts:compositeType="None" rts:activeConfigurationSet="default" rts:instanceName="JoystickPySDL20" rts:pathUri="localhost/JoystickPySDL20.rtc" rts:id="RTC:AIST:Device:JoystickPySDL20:1.0.0">
+		<rtsExt:Properties rtsExt:value="true" rtsExt:name="OpenRTM_NS" />
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="JoystickPySDL20.axes_1">
+			<rtsExt:Properties rtsExt:value="DataOutPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.io_mode" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="JoystickPySDL20.axes_2">
+			<rtsExt:Properties rtsExt:value="DataOutPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.io_mode" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="JoystickPySDL20.buttons">
+			<rtsExt:Properties rtsExt:value="DataOutPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.io_mode" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="JoystickPySDL20.hats">
+			<rtsExt:Properties rtsExt:value="DataOutPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.io_mode" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="JoystickPySDL20.balls">
+			<rtsExt:Properties rtsExt:value="DataOutPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.io_mode" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:ConfigurationSets rts:id="default">
+			<rts:ConfigurationData rts:data="0" rts:name="index" />
+		</rts:ConfigurationSets>
+		<rts:ConfigurationSets rts:id="__widget__">
+			<rts:ConfigurationData rts:data="text" rts:name="index" />
+		</rts:ConfigurationSets>
+		<rts:ConfigurationSets rts:id="__type__">
+			<rts:ConfigurationData rts:data="int" rts:name="index" />
+		</rts:ConfigurationSets>
+		<rts:ExecutionContexts xsi:type="rtsExt:execution_context_ext" rts:id="0" rts:rate="1000000" rts:kind="PERIODIC">
+			<rtsExt:Properties rtsExt:value="YES" rtsExt:name="sync_transition" />
+			<rtsExt:Properties rtsExt:value="0.5" rtsExt:name="transition_timeout" />
+			<rtsExt:Properties rtsExt:value="PeriodicExecutionContext" rtsExt:name="type" />
+		</rts:ExecutionContexts>
+		<rts:ExecutionContexts xsi:type="rtsExt:execution_context_ext" rts:id="1" rts:rate="1000" rts:kind="PERIODIC">
+			<rtsExt:Properties rtsExt:value="YES" rtsExt:name="sync_transition" />
+			<rtsExt:Properties rtsExt:value="0.5" rtsExt:name="transition_timeout" />
+			<rtsExt:Properties rtsExt:value="SimulatorExecutionContext" rtsExt:name="type" />
+		</rts:ExecutionContexts>
+		<rtsExt:Location rtsExt:direction="RIGHT" rtsExt:width="-1" rtsExt:height="-1" rtsExt:x="0" rtsExt:y="219" />
+	</rts:Components>
+	<rts:Components xsi:type="rtsExt:component_ext" rts:isRequired="false" rts:compositeType="None" rts:activeConfigurationSet="default" rts:instanceName="TankIoRTC_Py0" rts:pathUri="localhost/TankIoRTC_Py0.rtc" rts:id="RTC:AIST:Simulator:TankIoRTC_Py0:1.0.0">
+		<rtsExt:Properties rtsExt:value="true" rtsExt:name="OpenRTM_NS" />
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="TankIoRTC_Py0.velocities">
+			<rtsExt:Properties rtsExt:value="DataInPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVelocity2D:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="Any" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVelocity2D:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="TankIoRTC_Py0.torques">
+			<rtsExt:Properties rtsExt:value="DataInPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedDoubleSeq:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="Any" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedDoubleSeq:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="TankIoRTC_Py0.lightSwitch">
+			<rtsExt:Properties rtsExt:value="DataInPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="Any" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="TankIoRTC_Py0.angles">
+			<rtsExt:Properties rtsExt:value="DataOutPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/PanTiltAngles:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.io_mode" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/PanTiltAngles:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:ConfigurationSets rts:id="default">
+			<rts:ConfigurationData rts:data="0.05" rts:name="wheel_radius" />
+			<rts:ConfigurationData rts:data="0.2" rts:name="wheel_distance" />
+		</rts:ConfigurationSets>
+		<rts:ConfigurationSets rts:id="__widget__">
+			<rts:ConfigurationData rts:data="text" rts:name="wheel_radius" />
+			<rts:ConfigurationData rts:data="text" rts:name="wheel_distance" />
+		</rts:ConfigurationSets>
+		<rts:ConfigurationSets rts:id="__type__">
+			<rts:ConfigurationData rts:data="double" rts:name="wheel_radius" />
+			<rts:ConfigurationData rts:data="double" rts:name="wheel_distance" />
+		</rts:ConfigurationSets>
+		<rts:ExecutionContexts xsi:type="rtsExt:execution_context_ext" rts:id="0" rts:rate="1000000" rts:kind="PERIODIC">
+			<rtsExt:Properties rtsExt:value="YES" rtsExt:name="sync_transition" />
+			<rtsExt:Properties rtsExt:value="0.5" rtsExt:name="transition_timeout" />
+			<rtsExt:Properties rtsExt:value="PeriodicExecutionContext" rtsExt:name="type" />
+		</rts:ExecutionContexts>
+		<rts:ExecutionContexts xsi:type="rtsExt:execution_context_ext" rts:id="1" rts:rate="1000" rts:kind="PERIODIC">
+			<rtsExt:Properties rtsExt:value="YES" rtsExt:name="sync_transition" />
+			<rtsExt:Properties rtsExt:value="0.5" rtsExt:name="transition_timeout" />
+			<rtsExt:Properties rtsExt:value="SimulatorExecutionContext" rtsExt:name="type" />
+		</rts:ExecutionContexts>
+		<rtsExt:Location rtsExt:direction="RIGHT" rtsExt:width="-1" rtsExt:height="-1" rtsExt:x="523" rtsExt:y="10" />
+	</rts:Components>
+	<rts:Components xsi:type="rtsExt:component_ext" rts:isRequired="false" rts:compositeType="None" rts:activeConfigurationSet="default" rts:instanceName="TankJoystickControllerRTC_Py0" rts:pathUri="localhost/TankJoystickControllerRTC_Py0.rtc" rts:id="RTC:AIST:Controller:TankJoystickControllerRTC_Py0:1.0.0">
+		<rtsExt:Properties rtsExt:value="true" rtsExt:name="OpenRTM_NS" />
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="TankJoystickControllerRTC_Py0.angles">
+			<rtsExt:Properties rtsExt:value="DataInPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/PanTiltAngles:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="Any" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/PanTiltAngles:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="TankJoystickControllerRTC_Py0.axes_1">
+			<rtsExt:Properties rtsExt:value="DataInPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="Any" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="TankJoystickControllerRTC_Py0.axes_2">
+			<rtsExt:Properties rtsExt:value="DataInPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="Any" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="TankJoystickControllerRTC_Py0.buttons">
+			<rtsExt:Properties rtsExt:value="DataInPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="Any" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="TankJoystickControllerRTC_Py0.velocities">
+			<rtsExt:Properties rtsExt:value="DataOutPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVelocity2D:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.io_mode" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVelocity2D:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="TankJoystickControllerRTC_Py0.torques">
+			<rtsExt:Properties rtsExt:value="DataOutPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedDoubleSeq:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.io_mode" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedDoubleSeq:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="TankJoystickControllerRTC_Py0.lightSwitch">
+			<rtsExt:Properties rtsExt:value="DataOutPort" rtsExt:name="port.port_type" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="dataport.data_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.subscription_type" />
+			<rtsExt:Properties rtsExt:value="block, flush, new, nonblock, periodic" rtsExt:name="dataport.io_mode" />
+			<rtsExt:Properties rtsExt:value="cdr" rtsExt:name="dataport.marshaling_types" />
+			<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="data_type" />
+			<rtsExt:Properties rtsExt:value="push, pull, duplex" rtsExt:name="dataport.dataflow_type" />
+			<rtsExt:Properties rtsExt:value="corba_cdr, csp_channel, data_service, direct, shared_memory" rtsExt:name="dataport.interface_type" />
+		</rts:DataPorts>
+		<rts:ConfigurationSets rts:id="default">
+			<rts:ConfigurationData rts:data="0.001" rts:name="timeStep" />
+			<rts:ConfigurationData rts:data="200.0" rts:name="KP" />
+			<rts:ConfigurationData rts:data="50.0" rts:name="KD" />
+		</rts:ConfigurationSets>
+		<rts:ConfigurationSets rts:id="__widget__">
+			<rts:ConfigurationData rts:data="text" rts:name="timeStep" />
+			<rts:ConfigurationData rts:data="text" rts:name="KP" />
+			<rts:ConfigurationData rts:data="text" rts:name="KD" />
+		</rts:ConfigurationSets>
+		<rts:ConfigurationSets rts:id="__type__">
+			<rts:ConfigurationData rts:data="double" rts:name="timeStep" />
+			<rts:ConfigurationData rts:data="double" rts:name="KP" />
+			<rts:ConfigurationData rts:data="double" rts:name="KD" />
+		</rts:ConfigurationSets>
+		<rts:ExecutionContexts xsi:type="rtsExt:execution_context_ext" rts:id="0" rts:rate="1000000" rts:kind="PERIODIC">
+			<rtsExt:Properties rtsExt:value="YES" rtsExt:name="sync_transition" />
+			<rtsExt:Properties rtsExt:value="0.5" rtsExt:name="transition_timeout" />
+			<rtsExt:Properties rtsExt:value="PeriodicExecutionContext" rtsExt:name="type" />
+		</rts:ExecutionContexts>
+		<rts:ExecutionContexts xsi:type="rtsExt:execution_context_ext" rts:id="1" rts:rate="1000" rts:kind="PERIODIC">
+			<rtsExt:Properties rtsExt:value="YES" rtsExt:name="sync_transition" />
+			<rtsExt:Properties rtsExt:value="0.5" rtsExt:name="transition_timeout" />
+			<rtsExt:Properties rtsExt:value="SimulatorExecutionContext" rtsExt:name="type" />
+		</rts:ExecutionContexts>
+		<rtsExt:Location rtsExt:direction="RIGHT" rtsExt:width="-1" rtsExt:height="-1" rtsExt:x="212" rtsExt:y="35" />
+	</rts:Components>
+	<rts:DataPortConnectors xsi:type="rtsExt:dataport_connector_ext" rts:connectorId="e9c53746-7729-11ec-a070-7c2a31961959" rts:name="JoystickPySDL20.axes_2_TankJoystickControllerRTC_Py0.axes_2" rts:dataType="IDL:RTC/TimedVector2D:1.0" rts:interfaceType="corba_cdr" rts:dataflowType="push" rts:subscriptionType="block">
+		<rts:sourceDataPort xsi:type="rtsExt:target_port_ext" rts:portName="JoystickPySDL20.axes_2" rts:instanceName="JoystickPySDL20" rts:componentId="RTC:AIST:Device:JoystickPySDL20:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/JoystickPySDL20.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:sourceDataPort>
+		<rts:targetDataPort xsi:type="rtsExt:target_port_ext" rts:portName="TankJoystickControllerRTC_Py0.axes_2" rts:instanceName="TankJoystickControllerRTC_Py0" rts:componentId="RTC:AIST:Controller:TankJoystickControllerRTC_Py0:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/TankJoystickControllerRTC_Py0.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:targetDataPort>
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="dataport.data_type" />
+		<rtsExt:Properties rtsExt:value="corba_cdr" rtsExt:name="dataport.interface_type" />
+		<rtsExt:Properties rtsExt:value="push" rtsExt:name="dataport.dataflow_type" />
+		<rtsExt:Properties rtsExt:value="block" rtsExt:name="dataport.subscription_type" />
+		<rtsExt:Properties rtsExt:value="little,big" rtsExt:name="dataport.serializer.cdr.endian" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="dataport.outport.data_type" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="dataport.inport.data_type" />
+		<rtsExt:Properties rtsExt:value="{1:(84,255),2:(89,255),3:(178.5,255),4:(178.5,88),5:(268,88),6:(273,88)}" rtsExt:name="POSITION" />
+	</rts:DataPortConnectors>
+	<rts:DataPortConnectors xsi:type="rtsExt:dataport_connector_ext" rts:connectorId="e5014c2e-7729-11ec-964c-7c2a31961959" rts:name="JoystickPySDL20.axes_1_TankJoystickControllerRTC_Py0.axes_1" rts:dataType="IDL:RTC/TimedVector2D:1.0" rts:interfaceType="corba_cdr" rts:dataflowType="push" rts:subscriptionType="block">
+		<rts:sourceDataPort xsi:type="rtsExt:target_port_ext" rts:portName="JoystickPySDL20.axes_1" rts:instanceName="JoystickPySDL20" rts:componentId="RTC:AIST:Device:JoystickPySDL20:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/JoystickPySDL20.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:sourceDataPort>
+		<rts:targetDataPort xsi:type="rtsExt:target_port_ext" rts:portName="TankJoystickControllerRTC_Py0.axes_1" rts:instanceName="TankJoystickControllerRTC_Py0" rts:componentId="RTC:AIST:Controller:TankJoystickControllerRTC_Py0:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/TankJoystickControllerRTC_Py0.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:targetDataPort>
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="dataport.data_type" />
+		<rtsExt:Properties rtsExt:value="corba_cdr" rtsExt:name="dataport.interface_type" />
+		<rtsExt:Properties rtsExt:value="push" rtsExt:name="dataport.dataflow_type" />
+		<rtsExt:Properties rtsExt:value="block" rtsExt:name="dataport.subscription_type" />
+		<rtsExt:Properties rtsExt:value="little,big" rtsExt:name="dataport.serializer.cdr.endian" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="dataport.outport.data_type" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVector2D:1.0" rtsExt:name="dataport.inport.data_type" />
+		<rtsExt:Properties rtsExt:value="{1:(84,238),2:(89,238),3:(178.5,238),4:(178.5,71),5:(268,71),6:(273,71)}" rtsExt:name="POSITION" />
+	</rts:DataPortConnectors>
+	<rts:DataPortConnectors xsi:type="rtsExt:dataport_connector_ext" rts:connectorId="ec53669e-7729-11ec-a058-7c2a31961959" rts:name="JoystickPySDL20.buttons_TankJoystickControllerRTC_Py0.buttons" rts:dataType="IDL:RTC/TimedBooleanSeq:1.0" rts:interfaceType="corba_cdr" rts:dataflowType="push" rts:subscriptionType="block">
+		<rts:sourceDataPort xsi:type="rtsExt:target_port_ext" rts:portName="JoystickPySDL20.buttons" rts:instanceName="JoystickPySDL20" rts:componentId="RTC:AIST:Device:JoystickPySDL20:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/JoystickPySDL20.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:sourceDataPort>
+		<rts:targetDataPort xsi:type="rtsExt:target_port_ext" rts:portName="TankJoystickControllerRTC_Py0.buttons" rts:instanceName="TankJoystickControllerRTC_Py0" rts:componentId="RTC:AIST:Controller:TankJoystickControllerRTC_Py0:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/TankJoystickControllerRTC_Py0.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:targetDataPort>
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="dataport.data_type" />
+		<rtsExt:Properties rtsExt:value="corba_cdr" rtsExt:name="dataport.interface_type" />
+		<rtsExt:Properties rtsExt:value="push" rtsExt:name="dataport.dataflow_type" />
+		<rtsExt:Properties rtsExt:value="block" rtsExt:name="dataport.subscription_type" />
+		<rtsExt:Properties rtsExt:value="little,big" rtsExt:name="dataport.serializer.cdr.endian" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="dataport.outport.data_type" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="dataport.inport.data_type" />
+		<rtsExt:Properties rtsExt:value="{1:(84,272),2:(89,272),3:(178.5,272),4:(178.5,105),5:(268,105),6:(273,105)}" rtsExt:name="POSITION" />
+	</rts:DataPortConnectors>
+	<rts:DataPortConnectors xsi:type="rtsExt:dataport_connector_ext" rts:connectorId="f98fd21e-7729-11ec-abd7-7c2a31961959" rts:name="TankIoRTC_Py0.angles_TankJoystickControllerRTC_Py0.angles" rts:dataType="IDL:RTC/PanTiltAngles:1.0" rts:interfaceType="corba_cdr" rts:dataflowType="push" rts:subscriptionType="block">
+		<rts:sourceDataPort xsi:type="rtsExt:target_port_ext" rts:portName="TankIoRTC_Py0.angles" rts:instanceName="TankIoRTC_Py0" rts:componentId="RTC:AIST:Simulator:TankIoRTC_Py0:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/TankIoRTC_Py0.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:sourceDataPort>
+		<rts:targetDataPort xsi:type="rtsExt:target_port_ext" rts:portName="TankJoystickControllerRTC_Py0.angles" rts:instanceName="TankJoystickControllerRTC_Py0" rts:componentId="RTC:AIST:Controller:TankJoystickControllerRTC_Py0:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/TankJoystickControllerRTC_Py0.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:targetDataPort>
+		<rtsExt:Properties rtsExt:value="IDL:RTC/PanTiltAngles:1.0" rtsExt:name="dataport.data_type" />
+		<rtsExt:Properties rtsExt:value="corba_cdr" rtsExt:name="dataport.interface_type" />
+		<rtsExt:Properties rtsExt:value="push" rtsExt:name="dataport.dataflow_type" />
+		<rtsExt:Properties rtsExt:value="block" rtsExt:name="dataport.subscription_type" />
+		<rtsExt:Properties rtsExt:value="little,big" rtsExt:name="dataport.serializer.cdr.endian" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/PanTiltAngles:1.0" rtsExt:name="dataport.outport.data_type" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/PanTiltAngles:1.0" rtsExt:name="dataport.inport.data_type" />
+		<rtsExt:Properties rtsExt:value="{1:(602,29),2:(607,29),3:(607,0),4:(268,0),5:(268,54),6:(273,54)}" rtsExt:name="POSITION" />
+	</rts:DataPortConnectors>
+	<rts:DataPortConnectors xsi:type="rtsExt:dataport_connector_ext" rts:connectorId="f2ab1906-7729-11ec-aacd-7c2a31961959" rts:name="TankJoystickControllerRTC_Py0.velocities_TankIoRTC_Py0.velocities" rts:dataType="IDL:RTC/TimedVelocity2D:1.0" rts:interfaceType="corba_cdr" rts:dataflowType="push" rts:subscriptionType="block">
+		<rts:sourceDataPort xsi:type="rtsExt:target_port_ext" rts:portName="TankJoystickControllerRTC_Py0.velocities" rts:instanceName="TankJoystickControllerRTC_Py0" rts:componentId="RTC:AIST:Controller:TankJoystickControllerRTC_Py0:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/TankJoystickControllerRTC_Py0.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:sourceDataPort>
+		<rts:targetDataPort xsi:type="rtsExt:target_port_ext" rts:portName="TankIoRTC_Py0.velocities" rts:instanceName="TankIoRTC_Py0" rts:componentId="RTC:AIST:Simulator:TankIoRTC_Py0:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/TankIoRTC_Py0.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:targetDataPort>
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVelocity2D:1.0" rtsExt:name="dataport.data_type" />
+		<rtsExt:Properties rtsExt:value="corba_cdr" rtsExt:name="dataport.interface_type" />
+		<rtsExt:Properties rtsExt:value="push" rtsExt:name="dataport.dataflow_type" />
+		<rtsExt:Properties rtsExt:value="block" rtsExt:name="dataport.subscription_type" />
+		<rtsExt:Properties rtsExt:value="little,big" rtsExt:name="dataport.serializer.cdr.endian" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVelocity2D:1.0" rtsExt:name="dataport.outport.data_type" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedVelocity2D:1.0" rtsExt:name="dataport.inport.data_type" />
+		<rtsExt:Properties rtsExt:value="{1:(333,54),2:(338,54),3:(437.5,54),4:(437.5,29),5:(537,29),6:(542,29)}" rtsExt:name="POSITION" />
+	</rts:DataPortConnectors>
+	<rts:DataPortConnectors xsi:type="rtsExt:dataport_connector_ext" rts:connectorId="f510607a-7729-11ec-852e-7c2a31961959" rts:name="TankJoystickControllerRTC_Py0.torques_TankIoRTC_Py0.torques" rts:dataType="IDL:RTC/TimedDoubleSeq:1.0" rts:interfaceType="corba_cdr" rts:dataflowType="push" rts:subscriptionType="block">
+		<rts:sourceDataPort xsi:type="rtsExt:target_port_ext" rts:portName="TankJoystickControllerRTC_Py0.torques" rts:instanceName="TankJoystickControllerRTC_Py0" rts:componentId="RTC:AIST:Controller:TankJoystickControllerRTC_Py0:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/TankJoystickControllerRTC_Py0.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:sourceDataPort>
+		<rts:targetDataPort xsi:type="rtsExt:target_port_ext" rts:portName="TankIoRTC_Py0.torques" rts:instanceName="TankIoRTC_Py0" rts:componentId="RTC:AIST:Simulator:TankIoRTC_Py0:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/TankIoRTC_Py0.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:targetDataPort>
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedDoubleSeq:1.0" rtsExt:name="dataport.data_type" />
+		<rtsExt:Properties rtsExt:value="corba_cdr" rtsExt:name="dataport.interface_type" />
+		<rtsExt:Properties rtsExt:value="push" rtsExt:name="dataport.dataflow_type" />
+		<rtsExt:Properties rtsExt:value="block" rtsExt:name="dataport.subscription_type" />
+		<rtsExt:Properties rtsExt:value="little,big" rtsExt:name="dataport.serializer.cdr.endian" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedDoubleSeq:1.0" rtsExt:name="dataport.outport.data_type" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedDoubleSeq:1.0" rtsExt:name="dataport.inport.data_type" />
+		<rtsExt:Properties rtsExt:value="{1:(333,71),2:(338,71),3:(437.5,71),4:(437.5,46),5:(537,46),6:(542,46)}" rtsExt:name="POSITION" />
+	</rts:DataPortConnectors>
+	<rts:DataPortConnectors xsi:type="rtsExt:dataport_connector_ext" rts:connectorId="f70db51c-7729-11ec-b300-7c2a31961959" rts:name="TankJoystickControllerRTC_Py0.lightSwitch_TankIoRTC_Py0.lightSwitch" rts:dataType="IDL:RTC/TimedBooleanSeq:1.0" rts:interfaceType="corba_cdr" rts:dataflowType="push" rts:subscriptionType="block">
+		<rts:sourceDataPort xsi:type="rtsExt:target_port_ext" rts:portName="TankJoystickControllerRTC_Py0.lightSwitch" rts:instanceName="TankJoystickControllerRTC_Py0" rts:componentId="RTC:AIST:Controller:TankJoystickControllerRTC_Py0:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/TankJoystickControllerRTC_Py0.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:sourceDataPort>
+		<rts:targetDataPort xsi:type="rtsExt:target_port_ext" rts:portName="TankIoRTC_Py0.lightSwitch" rts:instanceName="TankIoRTC_Py0" rts:componentId="RTC:AIST:Simulator:TankIoRTC_Py0:1.0.0">
+			<rtsExt:Properties rtsExt:value="localhost/TankIoRTC_Py0.rtc" rtsExt:name="COMPONENT_PATH_ID" />
+		</rts:targetDataPort>
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="dataport.data_type" />
+		<rtsExt:Properties rtsExt:value="corba_cdr" rtsExt:name="dataport.interface_type" />
+		<rtsExt:Properties rtsExt:value="push" rtsExt:name="dataport.dataflow_type" />
+		<rtsExt:Properties rtsExt:value="block" rtsExt:name="dataport.subscription_type" />
+		<rtsExt:Properties rtsExt:value="little,big" rtsExt:name="dataport.serializer.cdr.endian" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="dataport.outport.data_type" />
+		<rtsExt:Properties rtsExt:value="IDL:RTC/TimedBooleanSeq:1.0" rtsExt:name="dataport.inport.data_type" />
+		<rtsExt:Properties rtsExt:value="{1:(333,88),2:(338,88),3:(437.5,88),4:(437.5,63),5:(537,63),6:(542,63)}" rtsExt:name="POSITION" />
+	</rts:DataPortConnectors>
+</rts:RtsProfile>
