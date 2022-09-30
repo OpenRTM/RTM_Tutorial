@@ -1,6 +1,7 @@
 @set PATH=%RTM_ROOT%jre\bin;%PATH%
+@set RTM_JAVA_ROOT=%~dp0
 @call set rtm_java_root=%RTM_JAVA_ROOT%
-@set JAR_BASE=%rtm_java_root%\jar\
+@set JAR_BASE=%RTM_JAVA_ROOT%\jar\
 @for /F %%A in ('dir "%JAR_BASE%OpenRTM*" /B') do (set FILE1=%%A)
 @for /F %%A in ('dir "%JAR_BASE%commons-cli*" /B') do (set FILE2=%%A)
 @for /F %%A in ('dir "%JAR_BASE%jna-?.?.?.*" /B') do (set FILE3=%%A)
