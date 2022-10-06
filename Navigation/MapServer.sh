@@ -1,4 +1,5 @@
 #!/bin/sh
+export RTM_JAVA_ROOT=`dirname $0`
 get_classpath()
 {
   FILE1=`ls ${RTM_JAVA_ROOT}/jar/OpenRTM*`
