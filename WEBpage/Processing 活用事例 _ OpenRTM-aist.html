@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="ja" dir="ltr" class="no-js js desktop landscape"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+<meta name="Generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="https://openrtm.org/openrtm/ja/doc/casestudy/processing">
+<link rel="shortlink" href="https://openrtm.org/openrtm/ja/node/7232">
+<link rel="top" href="https://openrtm.org/openrtm/ja/doc/casestudy">
+<link rel="prev" href="https://openrtm.org/openrtm/ja/content/build_ubuntu_codeblocks">
+<link rel="up" href="https://openrtm.org/openrtm/ja/doc/casestudy">
+<link rel="shortcut icon" href="https://openrtm.org/openrtm/sites/default/files/favicon.ico2" type="application/octet-stream">
+
+	<!--[if lte IE 8]>
+		<div style=' text-align:center; clear: both; padding:0 0 0 15px; position: relative;'>
+			<a href="//windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+				<img src="//storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
+			</a>
+		</div>
+	<![endif]-->
+
+	<title>Processing 活用事例 | OpenRTM-aist</title>
+
+	<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_KJyHl1hSJsEdkBASgPIekhH_AKCUnouJ6iBeWdvCB4o.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_ArLuzM5BHlgFoqj-OHHU6N-g8-F57ykMZudmPTbcBdw.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_u9kW64KVqORl17S6qVAoaz-TFZ9ywb48alg74boORSo.css" media="all">
+<style type="text/css" media="screen">
+<!--/*--><![CDATA[/*><!--*/
+body{font-size:75%  !important;}body.textsize-50{font-size:50% !important;}body.textsize-55{font-size:55% !important;}body.textsize-60{font-size:60% !important;}body.textsize-65{font-size:65% !important;}body.textsize-70{font-size:70% !important;}body.textsize-75{font-size:75% !important;}body.textsize-80{font-size:80% !important;}body.textsize-85{font-size:85% !important;}body.textsize-90{font-size:90% !important;}body.textsize-95{font-size:95% !important;}body.textsize-100{font-size:100% !important;}body.textsize-105{font-size:105% !important;}body.textsize-110{font-size:110% !important;}body.textsize-115{font-size:115% !important;}body.textsize-120{font-size:120% !important;}body.textsize-125{font-size:125% !important;}body.textsize-130{font-size:130% !important;}body.textsize-135{font-size:135% !important;}body.textsize-140{font-size:140% !important;}body.textsize-145{font-size:145% !important;}body.textsize-150{font-size:150% !important;}
+
+/*]]>*/-->
+</style>
+<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_fXSZ8RxE79y-nKzp2fDPMyqOy9AHUPYvzxgY7d7kHA4.css" media="all">
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+.panels-flexible-new .panels-flexible-region {
+  padding: 0;
+}
+
+.panels-flexible-new .panels-flexible-region-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-new .panels-flexible-region-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-new .panels-flexible-region-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-new .panels-flexible-column {
+  padding: 0;
+}
+
+.panels-flexible-new .panels-flexible-column-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-new .panels-flexible-column-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-new .panels-flexible-column-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-new .panels-flexible-row {
+  padding: 0 0 0.5em 0;
+  margin: 0;
+}
+
+.panels-flexible-new .panels-flexible-row-last {
+  padding-bottom: 0;
+}
+
+.panels-flexible-column-new-main {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-new-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-new {
+  width: auto;
+}
+
+.panels-flexible-region-new-center {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-new-main-row-inside {
+  padding-right: 0px;
+}
+
+
+/*]]>*/-->
+</style>
+<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_B2XKKJT3s6bUTIGVxNPCtY6gp-fWRu4aJBTGLqT7fYY.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_9Rwt5UrnEdyfS205I72Q5tQLJ3HnzFBbetAdPuju4LI.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_6aLufD7PZqSyVM8ltYiEB-ogR_n8n1SD85r-m6JROu4.css" media="all">
+<script type="text/javascript" async="" src="./Processing 活用事例 _ OpenRTM-aist_files/page.js.ダウンロード"></script><script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_s7yA-hwRxnKty__ED6DuqmTMKG39xvpRyrtyCrbWH4M.js.ダウンロード"></script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_CHyih5wYCJakJEd60obUewTPHjsfkt9FBCocSm7nnm4.js.ダウンロード"></script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_i_msAU5XDV6XNFAO124fjuB5WFJbUIxp-jTXEznK5mc.js.ダウンロード"></script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_PL_fpGwEK1vZZm7p8mM3TrRAIIjq4_USYnirOiNtyRA.js.ダウンロード"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+  var textsizeCookieExpires = 365;
+  var textsizeCookieDomain = "/openrtm/";
+  var textsizeElement = "body";
+  var textsizeElementClass = "";
+  var textsizeIncrement = 5;
+  var textsizeNormal = 75;
+  var textsizeMinimum = 50;
+  var textsizeMaximum = 150;
+  var textsizeIncrementDisplay = 7;
+  var textsizeNormalDisplay = 100;
+  var textsizeDisplay = 1;
+  var textsizeMinT = "<abbr title=\"最小\" class=\"textsize\">Min.</abbr> ";
+  var textsizeMaxT = "<abbr title=\"最大\" class=\"textsize\">Max.</abbr> ";
+  var textsizeCurrentText = "Current Size";
+  var textsizeReset = 0;
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_5HaahOJq8_wyTsjHvvTlg1IH6_oG6l0M4jmzDGncT60.js.ダウンロード"></script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "UA-772771-2", {"groups":"default","cookie_domain":".openrtm.org","anonymize_ip":true});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.a2a_config=window.a2a_config||{};window.da2a={done:false,html_done:false,script_ready:false,script_load:function(){var a=document.createElement('script'),s=document.getElementsByTagName('script')[0];a.type='text/javascript';a.async=true;a.src='https://static.addtoany.com/menu/page.js';s.parentNode.insertBefore(a,s);da2a.script_load=function(){};},script_onready:function(){da2a.script_ready=true;if(da2a.html_done)da2a.init();},init:function(){for(var i=0,el,target,targets=da2a.targets,length=targets.length;i<length;i++){el=document.getElementById('da2a_'+(i+1));target=targets[i];a2a_config.linkname=target.title;a2a_config.linkurl=target.url;if(el){a2a.init('page',{target:el});el.id='';}da2a.done=true;}da2a.targets=[];}};(function ($){Drupal.behaviors.addToAny = {attach: function (context, settings) {if (context !== document && window.da2a) {if(da2a.script_ready)a2a.init_all();da2a.script_load();}}}})(jQuery);a2a_config.callbacks=a2a_config.callbacks||[];a2a_config.callbacks.push({ready:da2a.script_onready});a2a_config.overlays=a2a_config.overlays||[];a2a_config.templates=a2a_config.templates||{};
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_5A4ROVE-RBroQWrIjYmrSrEgnx6QSxg4M572DlFvt8Q.js.ダウンロード"></script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_q_JceOZiGxlu0vuxz_bWtbw4h_eBWRZLeCMu9tY7f64.js.ダウンロード"></script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_vR22exJf36SHgS7c394Jdf4eiDe3KmrEzc_88iV-uF4.js.ダウンロード"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/openrtm\/","pathPrefix":"ja\/","setHasJsCookie":0,"ajaxPageState":{"theme":"theme935","theme_token":"gw8uIGuKEcD294ox1iuaqLiqrCS_tFK75UDTKPTL_EY","jquery_version":"1.8","js":{"0":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.8\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/form-single-submit.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/entityreference\/js\/entityreference.js":1,"sites\/all\/modules\/project_issue\/js\/project-issue.js":1,"public:\/\/languages\/ja_jOnCplnBC--xjz0l8AIHej5LnXnRgVARvAOcslVTjck.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"1":1,"sites\/all\/modules\/textsize\/jquery.textsize.js":1,"misc\/jquery.cookie.js":1,"sites\/default\/modules\/tm_animate\/js\/wow.js":1,"sites\/default\/modules\/node_helper\/node_helper.js":1,"sites\/all\/modules\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"https:\/\/openrtm.org\/openrtm\/sites\/default\/files\/googleanalytics\/js?ssivwh":1,"2":1,"3":1,"sites\/default\/modules\/tm_block_bg\/js\/tm_block_bg_video.js":1,"sites\/default\/modules\/tm_block_bg\/js\/jquery.mb.YTPlayer.js":1,"sites\/default\/modules\/tm_block_bg\/js\/tm_block_bg_parallax.js":1,"sites\/default\/modules\/tm_block_bg\/js\/jquery.stellar.min.js":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/sfsmallscreen.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/libraries\/superfish\/supersubs.js":1,"sites\/all\/modules\/superfish\/superfish.js":1,"sites\/all\/themes\/theme935_org\/js\/theme935.core.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.loader.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.debouncedresize.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.mobilemenu.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.easing.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.ui.totop.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.cookie.js":1,"sites\/all\/themes\/theme935_org\/js\/tm-stick-up.js":1,"sites\/all\/themes\/theme935_org\/js\/tformer.js":1,"sites\/all\/themes\/theme935_org\/js\/device.min.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.mousewheel.min.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.simplr.smoothscroll.min.js":1,"sites\/all\/themes\/theme935_org\/js\/migrate.js":1,"public:\/\/cpn\/global.js":1,"public:\/\/cpn\/superfish-2.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/footnotes\/footnotes.css":1,"modules\/node\/node.css":1,"modules\/poll\/poll.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/video_filter\/video_filter.css":1,"sites\/all\/modules\/youtube\/css\/youtube.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/project_issue\/project_issue.css":1,"sites\/all\/modules\/project\/release\/project_release.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/pearwiki_filter\/pearwiki_filter.css":1,"0":1,"sites\/all\/modules\/textsize\/textsize.css":1,"sites\/default\/modules\/tm_animate\/css\/animate.css":1,"sites\/default\/modules\/tm_font_awesome\/css\/font-awesome.css":1,"modules\/locale\/locale.css":1,"sites\/all\/modules\/panels\/plugins\/layouts\/threecol_33_34_33_stacked\/threecol_33_34_33_stacked.css":1,"sites\/all\/modules\/panels\/plugins\/layouts\/flexible\/flexible.css":1,"1":1,"sites\/all\/modules\/panels\/plugins\/layouts\/onecol\/onecol.css":1,"sites\/default\/modules\/tm_follow\/css\/tm_follow.css":1,"sites\/all\/modules\/addtoany\/addtoany.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/libraries\/superfish\/css\/superfish-smallscreen.css":1,"sites\/all\/themes\/theme935_org\/css\/boilerplate.css":1,"sites\/all\/themes\/theme935_org\/css\/style.css":1,"sites\/all\/themes\/theme935_org\/css\/maintenance-page.css":1,"sites\/all\/themes\/theme935_org\/css\/skeleton.css":1,"sites\/all\/themes\/theme935_org\/css\/custom.css":1,"cpn_global":1,"public:\/\/cpn\/superfish-2.css":1,"public:\/\/cpn\/search-form.css":1,"public:\/\/cpn\/tm_follow-site.css":1,"public:\/\/cpn\/system-user-menu.css":1,"public:\/\/cpn\/locale-language.css":1,"public:\/\/cpn\/panels_mini-front_page_block.css":1,"public:\/\/cpn\/views-mews_new-mini_block.css":1,"public:\/\/cpn\/user-login.css":1}},"colorbox":{"opacity":"0.85","current":"{current} \/ {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"\u9589\u3058\u308b","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","file_public_path":"\/openrtm\/sites\/default\/files","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"node_helper":{"select_required_function":{"#value":{"hide_the_form_in_preview":0,"hide_the_teaser_in_preview":0,"make_a_node_editing_tab_to_screw_icon":0}},"author_user_reference":{"#value":""},"search_field_name":{"#value":""},"the_nest_of_these_form_the_table":{"#value":""},"the_nest_of_these_form_the_table_container":{"#value":""},"the_nest_of_these_form_the_table_item":{"#value":""},"add_class_into_form_tag":{"#value":""},"simplify_the_control_of_the_date_field":{"#value":""},"simplify_the_multi_field":{"#value":""},"class_for_actions":{"#value":""},"class_for_submit":{"#value":""},"class_for_preview":{"#value":""},"class_for_delete":{"#value":""},"class_for_cancel":{"#value":""}},"views":{"ajax_path":"\/openrtm\/ja\/views\/ajax","ajaxViews":{"views_dom_id:166cc25649ce4978b93195feca1bd9fe":{"view_name":"mews_new","view_display_id":"mini_block","view_args":"","view_path":"node\/7232","view_base_path":"news\/new","view_dom_id":"166cc25649ce4978b93195feca1bd9fe","pager_element":0}}},"urlIsAjaxTrusted":{"\/openrtm\/ja\/views\/ajax":true,"\/openrtm\/ja\/doc\/casestudy\/processing":true,"\/openrtm\/ja\/doc\/casestudy\/processing?destination=node\/7232":true},"googleanalytics":{"account":["UA-772771-2"],"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1,"trackDomainMode":1},"superfish":{"2":{"id":"2","sf":{"animation":{"opacity":"show","height":"show"},"speed":"fast"},"plugins":{"smallscreen":{"mode":"window_width","breakpointUnit":"px","expandText":"\u5c55\u958b","collapseText":"\u6298\u308a\u305f\u305f\u3080","title":"OpenRTM-aist (ja)"},"supposition":true,"supersubs":true}}}});
+//--><!]]>
+</script>
+
+	<!--[if LT IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<script>
+		if (jQuery.cookie('the_cookie') != 0) {
+			document.write('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">')
+		} else {
+			document.write('<meta name="viewport" content="width=device-width">')
+		}
+	</script><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	
+	
+	<link rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/style-mobile.css" media="screen" id="style-mobile">
+	<link rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/skeleton-mobile.css" media="screen" id="skeleton-mobile">
+<script src="./Processing 活用事例 _ OpenRTM-aist_files/core.gfvbdf8m.js.ダウンロード" type="module"></script></head>
+<body id="body" class="html not-front not-logged-in no-sidebars page-node page-node- page-node-7232 node-type-book i18n-ja page-casestudy-processing section-doc form-single-submit-processed project-issue-focused-input-processed">
+	
+
+
+<a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#content" class="element-invisible element-focusable">Skip to main content</a>
+
+
+<div id="page-wrapper" class="page-wrapper">
+	<div id="page" class="page">
+		
+		<!-- Header
+		======================================================================================= -->
+		<header id="header" class="header page-header clearfix" role="banner">
+			<!-- Region Header Top -->
+			
+			<div class="stickup header-section-1" style="position: relative; top: 0px;"> <!-- Sticky menu wrapper -->
+				<div class="container-12">
+					<div class="grid-12">
+						<div class="col1">
+							<!-- Logo -->
+															<div id="logo" class="logo">
+																			<a href="https://openrtm.org/openrtm/ja" title="ホーム" rel="home" id="img-logo" class="img-logo">
+											<img src="./Processing 活用事例 _ OpenRTM-aist_files/logo.png" alt="ホーム">
+										</a>
+																			<h1 title="OpenRTM-aist" id="site-name" class="site-name">
+											<a href="https://openrtm.org/openrtm/ja" title="OpenRTM-aist">OpenRTM-aist</a>
+										</h1>
+																			<div title="The power to connect" id="slogan" class="slogan">
+											The power to connect										</div>
+																	</div><!-- /#name-and-slogan -->
+													</div>
+						
+						<div class="col2">
+							<!-- Region Menu -->
+							  <div class="region region-menu">
+    
+<div id="block-superfish-1" class="block block-superfish block-odd block-superfish-1">
+	<!-- Block title -->
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<ul id="superfish-1" class="menu sf-menu sf-menu-side-menu-ja sf-horizontal sf-style-none sf-total-items-8 sf-parent-items-5 sf-single-items-3 superfish-processed sf-js-enabled sf-shadow"><li id="menu-946-2" class="first odd sf-item-1 sf-depth-1 sf-no-children"><a href="https://openrtm.org/openrtm/ja" title="OpenRTM-aist official website" class="sf-depth-1">ホーム</a></li><li id="menu-1329-2" class="middle even sf-item-2 sf-depth-1"><a href="https://openrtm.org/openrtm/ja/download" title="ダウンロード" class="sf-depth-1">ダウンロード</a></li><li id="menu-1331-2" class="middle odd sf-item-3 sf-depth-1 sf-total-children-9 sf-parent-children-7 sf-single-children-2 menuparent"><a href="https://openrtm.org/openrtm/ja/doc" title="ドキュメント" class="sf-depth-1 menuparent sf-with-ul">ドキュメント<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="float: none; width: 18.8333em;"><li id="menu-1535-2" class="first odd sf-item-1 sf-depth-2 sf-total-children-9 sf-parent-children-0 sf-single-children-9 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/doc/aboutopenrtm" title="OpenRTM-aistとは？" class="sf-depth-2 menuparent sf-with-ul" style="">OpenRTM-aistとは？<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 12.25em;"><li id="menu-2459-2" class="first odd sf-item-1 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rtmiddleware" title="RTミドルウエア" class="sf-depth-3" style="">RTミドルウエア</a></li><li id="menu-2460-2" class="middle even sf-item-2 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/license" title="ライセンス" class="sf-depth-3" style="">ライセンス</a></li><li id="menu-2461-2" class="middle odd sf-item-3 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/specification" title="OpenRTM-aist 諸元" class="sf-depth-3" style="">OpenRTM-aist 諸元</a></li><li id="menu-2524-2" class="middle even sf-item-4 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rtc_architecture" title="RTコンポーネントアーキテクチャ" class="sf-depth-3" style="">RTCアーキテクチャ</a></li><li id="menu-2526-2" class="middle odd sf-item-5 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rtc_developmentflow" title="RTC開発の流れ" class="sf-depth-3" style="">RTC開発の流れ</a></li><li id="menu-2528-2" class="middle even sf-item-6 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rts_developmentflow" title="RTシステム開発の流れ" class="sf-depth-3" style="">RTシステム開発の流れ</a></li><li id="menu-15094-2" class="middle odd sf-item-7 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rts_developmentflow" title="" class="sf-depth-3" style="">RTS開発の流れ</a></li><li id="menu-15095-2" class="middle even sf-item-8 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/researchanddevel" title="" class="sf-depth-3" style="">研究開発</a></li><li id="menu-18215-2" class="last odd sf-item-9 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/node/7240" title="" class="sf-depth-3" style="">docker_test</a></li></ul></li><li id="menu-738-2" class="middle even sf-item-2 sf-depth-2 sf-total-children-7 sf-parent-children-3 sf-single-children-4 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation" title="インストール" class="sf-depth-2 menuparent sf-with-ul" style="">インストール<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 20.6667em;"><li id="menu-12237-2" class="first odd sf-item-1 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/lets_start" title="OpenRTM-aistを10分で始めよう！" class="sf-depth-3" style="">OpenRTM-aistを10分で始めよう！</a></li><li id="menu-14954-2" class="middle even sf-item-2 sf-depth-3 sf-total-children-3 sf-parent-children-0 sf-single-children-3 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_2_0" title="OpenRTM-aist 2.0系のインストール" class="sf-depth-3 menuparent sf-with-ul" style="">2.0系のインストール<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 12em;"><li id="menu-14965-2" class="first odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_2_0/install_win_2_0" class="sf-depth-4" style="">Windows</a></li><li id="menu-17646-2" class="middle even sf-item-2 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_2_0/install_linux_2_0" class="sf-depth-4" style="">Linux</a></li><li id="menu-18026-2" class="last odd sf-item-3 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_2_0/install_raspbian_2_0" class="sf-depth-4" style="">Raspberry Pi OS</a></li></ul></li><li id="menu-1812-2" class="middle odd sf-item-3 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/sample_components" title="OpenRTM付属のサンプルについて" class="sf-depth-3" style="">OpenRTM付属のサンプルコンポーネント</a></li><li id="menu-15911-2" class="middle even sf-item-4 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_rtshell" class="sf-depth-3" style="">rtshellのインストール</a></li><li id="menu-15177-2" class="middle odd sf-item-5 sf-depth-3 sf-total-children-4 sf-parent-children-0 sf-single-children-4 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_1_2" title="OpenRTM-aist 1.2系のインストール" class="sf-depth-3 menuparent sf-with-ul" style="">1.2系のインストール<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 12em;"><li id="menu-14961-2" class="first odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_1_2/cpp_1_2" title="OpenRTM-aist(C++版)1.2系のインストール" class="sf-depth-4" style="">C++版1.2系</a></li><li id="menu-14962-2" class="middle even sf-item-2 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_1_2/python_1_2" title="OpenRTM-aist(Python版)1.2系のインストール" class="sf-depth-4" style="">Python版1.2系</a></li><li id="menu-14963-2" class="middle odd sf-item-3 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_1_2/java_1_2" title="OpenRTM-aist (Java版) 1.2系のインストール" class="sf-depth-4" style="">Java版 1.2系</a></li><li id="menu-15020-2" class="last even sf-item-4 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_1_2/eclipse" title="OpenRTM Eclipse tools のインストール" class="sf-depth-4" style="">OpenRTP 1.2系</a></li></ul></li><li id="menu-14952-2" class="middle even sf-item-6 sf-depth-3 sf-total-children-4 sf-parent-children-0 sf-single-children-4 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_1_1" title="OpenRTM-aist 1.1系のインストール" class="sf-depth-3 menuparent sf-with-ul" style="">1.1系のインストール<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 23.25em;"><li id="menu-1969-2" class="first odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_1_1/cpp_1_1" title="OpenRTM-aist (C++版) 1.1系のインストール" class="sf-depth-4" style="">C++版 1.1系</a></li><li id="menu-1516-2" class="middle even sf-item-2 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_1_1/python_1_1" title="OpenRTM-aist(Python版) 1.1系のインストール" class="sf-depth-4" style="">Python版 1.1系</a></li><li id="menu-1521-2" class="middle odd sf-item-3 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_1_1/java_1_1" title="OpenRTM-aist (Java版) 1.1系のインストール" class="sf-depth-4" style="">Java版 1.1系</a></li><li id="menu-2207-2" class="last even sf-item-4 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/install_1_1/openrtm_eclipse_tools_1_1" title="OpenRTM Eclipse tools のインストール" class="sf-depth-4" style="">OpenRTM Eclipse tools のインストール 1.1系</a></li></ul></li><li id="menu-2706-2" class="last odd sf-item-7 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/installation/other" title="その他" class="sf-depth-3" style="">その他</a></li></ul></li><li id="menu-761-2" class="middle odd sf-item-3 sf-depth-2 sf-total-children-8 sf-parent-children-0 sf-single-children-8 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/doc/toolmanuals" title="ツールマニュアル" class="sf-depth-2 menuparent sf-with-ul" style="">ツール<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 15.5em;"><li id="menu-15046-2" class="first odd sf-item-1 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtsystemeditor-1_2_0" class="sf-depth-3" style="">RTSystemEditor-1.2.0</a></li><li id="menu-15048-2" class="middle even sf-item-2 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtc_builder-1_2_0" class="sf-depth-3" style="">RTCBuilder-1.2.0</a></li><li id="menu-5969-2" class="middle odd sf-item-3 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtsystemeditor-1_1_0" title="RTSystemEditor-1.1.0" class="sf-depth-3" style="">RTSystemEditor-1.1.0</a></li><li id="menu-5560-2" class="middle even sf-item-4 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtcbuilder-1_1_0" title="RTCBuilder-1.1.0" class="sf-depth-3" style="">RTCBuilder-1.1.0</a></li><li id="menu-15118-2" class="middle odd sf-item-5 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtsystemeditor-1_0_0" title="RTSystemEditor-1.0.0" class="sf-depth-3" style="">RTSystemEditor-1.0.0</a></li><li id="menu-2235-2" class="middle even sf-item-6 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtcbuilder-1_0_0" title="RTCBuilder-1.0.0" class="sf-depth-3" style="">RTCBuilder-1.0.0</a></li><li id="menu-2443-2" class="middle odd sf-item-7 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtshell" title="rtcshell/rtsshell" class="sf-depth-3" style="">rtshell</a></li><li id="menu-1824-2" class="last even sf-item-8 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/toolmanuals/rostransport" title="ROSトランスポート(rosport)" class="sf-depth-3" style="">ROSトランスポート(rosport)</a></li></ul></li><li id="menu-794-2" class="middle even sf-item-4 sf-depth-2 sf-total-children-5 sf-parent-children-2 sf-single-children-3 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide" title="OpenRTM-aistデベロッパーズガイド" class="sf-depth-2 menuparent sf-with-ul" style="">OpenRTM-aistデベロッパーズガイド<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 15.1667em;"><li id="menu-795-2" class="first odd sf-item-1 sf-depth-3 sf-total-children-8 sf-parent-children-0 sf-single-children-8 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming" title="RTCプログラミング入門" class="sf-depth-3 menuparent sf-with-ul" style="">RTCプログラミング入門<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 21em;"><li id="menu-2664-2" class="first odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/rtcdevelflow" title="RTCプログラミングの流れ" class="sf-depth-4" style="">プログラミングの流れ</a></li><li id="menu-2659-2" class="middle even sf-item-2 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/dataport" title="データポート (基礎編)" class="sf-depth-4" style="">データポート</a></li><li id="menu-2665-2" class="middle odd sf-item-3 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/servcieport" title="サービスポート (基礎編)" class="sf-depth-4" style="">サービスポート</a></li><li id="menu-2667-2" class="middle even sf-item-4 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/configuration" title="コンフィギュレーション (基礎編)" class="sf-depth-4" style="">コンフィギュレーション</a></li><li id="menu-2670-2" class="middle odd sf-item-5 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/configuration_file_commandlineoption" title="設定ファイルとコマンドラインオプション" class="sf-depth-4" style="">設定ファイルとコマンドラインオプション</a></li><li id="menu-2671-2" class="middle even sf-item-6 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/manager" title="マネージャ (基礎編)" class="sf-depth-4" style="">マネージャ</a></li><li id="menu-2688-2" class="middle odd sf-item-7 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/rtc_conf_reference" title="rtc.conf設定項目一覧" class="sf-depth-4" style="">rtc.conf設定項目一覧</a></li><li id="menu-16053-2" class="last even sf-item-8 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/comp_conf_reference" class="sf-depth-4" style="">component.conf 設定項目一覧</a></li></ul></li><li id="menu-2675-2" class="middle even sf-item-2 sf-depth-3 sf-total-children-4 sf-parent-children-0 sf-single-children-4 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/advanced_rtc_programming" title="RTCプログラミング (応用編)" class="sf-depth-3 menuparent sf-with-ul" style="">RTCプログラミング (応用編)<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 17.1667em;"><li id="menu-2661-2" class="first odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/dataport_advanced" title="データポート (応用編)" class="sf-depth-4" style="">データポート (応用編)</a></li><li id="menu-2676-2" class="middle even sf-item-2 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/serviceport_adavanced" title="サービスポート (応用編)" class="sf-depth-4" style="">サービスポート (応用編)</a></li><li id="menu-15213-2" class="middle odd sf-item-3 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/sdo_service" class="sf-depth-4" style="">SDO サービス編</a></li><li id="menu-2677-2" class="last even sf-item-4 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/configuration_adavanced" title="コンフィギュレーション (応用編)" class="sf-depth-4" style="">コンフィギュレーション (応用編)</a></li></ul></li><li id="menu-2673-2" class="middle odd sf-item-3 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/rt_system_development" title="RTシステム開発入門" class="sf-depth-3" style="">RTシステム開発入門</a></li><li id="menu-751-2" class="middle even sf-item-4 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/advanced_rt_system_programming" title="RTシステム開発 (応用編)" class="sf-depth-3" style="">RTシステム開発 (応用編)</a></li><li id="menu-760-2" class="last odd sf-item-5 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/developersguide/inside_openrtm-aist" title="インサイドOpenRTM-aist" class="sf-depth-3" style="">インサイドOpenRTM-aist</a></li></ul></li><li id="menu-758-2" class="middle odd sf-item-5 sf-depth-2 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/openrtm-aist_class_reference" title="OpenRTM-aist クラスリファレンス" class="sf-depth-2" style="">OpenRTM-aist クラスリファレンス</a></li><li id="menu-748-2" class="middle even sf-item-6 sf-depth-2 sf-total-children-7 sf-parent-children-0 sf-single-children-7 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/doc/casestudy" title="ケーススタディ" class="sf-depth-2 menuparent sf-with-ul" style="">ケーススタディ<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 21.1667em;"><li id="menu-14067-2" class="first odd sf-item-1 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/casestudy/opencv_comp_development" title="画像処理コンポーネントの作成" class="sf-depth-3" style="">画像処理コンポーネントの作成</a></li><li id="menu-14068-2" class="middle even sf-item-2 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/casestudy/rtc_development" title="RTコンポーネントの作成" class="sf-depth-3" style="">RTコンポーネントの作成</a></li><li id="menu-9287-2" class="middle odd sf-item-3 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/casestudy/guitool_and_rtc" title="GUI ツールキットとRTCの連携" class="sf-depth-3" style="">GUI ツールキットとRTCの連携</a></li><li id="menu-12238-2" class="middle even sf-item-4 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/casestudy/lego_mindstorm" title="LEGO Mindstorms EV3 活用事例" class="sf-depth-3" style="">LEGO Mindstorms EV3 活用事例</a></li><li id="menu-11814-2" class="middle odd sf-item-5 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/casestudy/leapmotion_choreonoid" title="LeapMotionでChoreonoidの制御" class="sf-depth-3" style="">LeapMotionでChoreonoidの制御</a></li><li id="menu-11331-2" class="middle even sf-item-6 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/casestudy/vpn_setup_for_rtmnetwork" title="VPNを利用したRTMネットワーク設定方法" class="sf-depth-3" style="">VPNを利用したRTMネットワーク設定方法</a></li><li id="menu-14073-2" class="last odd sf-item-7 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/casestudy/raspberypi_mouse" title="Raspberry Pi Mouse 活用事例" class="sf-depth-3" style="">Raspberry Pi Mouse 活用事例</a></li></ul></li><li id="menu-711-2" class="middle odd sf-item-7 sf-depth-2 sf-total-children-5 sf-parent-children-0 sf-single-children-5 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/doc/corba" title="CORBA" class="sf-depth-2 menuparent sf-with-ul" style="">CORBA<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 12.3333em;"><li id="menu-715-2" class="first odd sf-item-1 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/corba/ccm" title="CCM" class="sf-depth-3" style="">CCM</a></li><li id="menu-713-2" class="middle even sf-item-2 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/corba/idlcompiler" title="IDLコンパイラ" class="sf-depth-3" style="">IDLコンパイラ</a></li><li id="menu-716-2" class="middle odd sf-item-3 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/corba/mico_ccm" title="MICO_CCM" class="sf-depth-3" style="">MICO_CCM</a></li><li id="menu-712-2" class="middle even sf-item-4 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/corba/type" title="_var_type, _ptr_type" class="sf-depth-3" style="">_var_type, _ptr_type</a></li><li id="menu-714-2" class="last odd sf-item-5 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/corba/rules_to_pass_variable" title="変数受渡規則" class="sf-depth-3" style="">変数受渡規則</a></li></ul></li><li id="menu-717-2" class="middle even sf-item-8 sf-depth-2 sf-total-children-10 sf-parent-children-0 sf-single-children-10 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/doc/faq" title="FAQ" class="sf-depth-2 menuparent sf-with-ul" style="">よくある質問<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 27em;"><li id="menu-719-2" class="first odd sf-item-1 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/faq/faq_rtm_openrtm-aist" title="RTミドルウェア/OpenRTM-aistについて" class="sf-depth-3" style="">RTミドルウェア / OpenRTM-aist について</a></li><li id="menu-13961-2" class="middle even sf-item-2 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/faq/faq_common_license" title="一般・ライセンスに関する FAQ" class="sf-depth-3" style="">一般・ライセンスに関する FAQ</a></li><li id="menu-13938-2" class="middle odd sf-item-3 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/faq/faq_install" title="インストールに関する FAQ" class="sf-depth-3" style="">インストールに関する FAQ</a></li><li id="menu-13934-2" class="middle even sf-item-4 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/faq/faq_rtc_creation" title="RTコンポーネント作成に関する FAQ" class="sf-depth-3" style="">RTコンポーネント作成に関する FAQ</a></li><li id="menu-13935-2" class="middle odd sf-item-5 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/faq/faq_openrtm_cpp" title="OpenRTM-aist (C++版) に関する FAQ" class="sf-depth-3" style="">OpenRTM-aist (C++版) に関する FAQ</a></li><li id="menu-13936-2" class="middle even sf-item-6 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/faq/faq_openrtm_python" title="OpenRTM-aist (Python版) に関する FAQ" class="sf-depth-3" style="">OpenRTM-aist (Python版) に関する FAQ</a></li><li id="menu-13937-2" class="middle odd sf-item-7 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/faq/faq_openrtm_java" title="OpenRTM-aist (Java版) に関する FAQ" class="sf-depth-3" style="">OpenRTM-aist (Java版) に関する FAQ</a></li><li id="menu-724-2" class="middle even sf-item-8 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/faq/faq_rtp_tools" title="RTSystemEditor、RTCBuilder、rtshell 等ツールに関する FAQ" class="sf-depth-3" style="">RTSystemEditor、RTCBuilder、rtshell 等ツールに関する FAQ</a></li><li id="menu-13940-2" class="middle odd sf-item-9 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/faq/faq_other" title="その他 FAQ" class="sf-depth-3" style="">その他 FAQ</a></li><li id="menu-13941-2" class="last even sf-item-10 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/faq/faq_old" title="過去に掲載した FAQ" class="sf-depth-3" style="">過去に掲載した FAQ</a></li></ul></li><li id="menu-15610-2" class="last odd sf-item-9 sf-depth-2 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/doc/old_document" title="過去文書" class="sf-depth-2" style="">過去文書</a></li></ul></li><li id="menu-1334-2" class="middle even sf-item-4 sf-depth-1 sf-total-children-4 sf-parent-children-2 sf-single-children-2 menuparent"><a href="https://openrtm.org/openrtm/ja/community" title="コミュニティ" class="sf-depth-1 menuparent sf-with-ul">コミュニティ<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="float: none; width: 12em;"><li id="menu-4449-2" class="first odd sf-item-1 sf-depth-2 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/community/mailinglist_ja" title="メーリングリスト" class="sf-depth-2" style="">メーリングリスト</a></li><li id="menu-4235-2" class="middle even sf-item-2 sf-depth-2 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/community/forum_ja" title="フォーラム" class="sf-depth-2" style="">フォーラム</a></li><li id="menu-797-2" class="middle odd sf-item-3 sf-depth-2 sf-total-children-6 sf-parent-children-0 sf-single-children-6 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/tutorials" title="講習会" class="sf-depth-2 menuparent sf-with-ul" style="">講習会<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 23.6667em;"><li id="menu-296705-2" class="first odd sf-item-1 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/tutorial/robomech2025" class="sf-depth-3" style="">ROBOMECH2025講習会 (2025年6月4日(水))</a></li><li id="menu-172128-2" class="middle even sf-item-2 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/tutorial/summercamp2024" class="sf-depth-3" style="">RTミドルウェアサマーキャンプ2024</a></li><li id="menu-84281-2" class="middle odd sf-item-3 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/tutorial/robomech2024" class="sf-depth-3" style="">ROBOMECH2024講習会 (2024年5月29日(水))</a></li><li id="menu-18211-2" class="middle even sf-item-4 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/node/7233/" title="" class="sf-depth-3" style="">RTミドルウェアサマーキャンプ2023</a></li><li id="menu-18205-2" class="middle odd sf-item-5 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/tutorial/robomech2023" class="sf-depth-3" style="">ROBOMECH2023講習会 (2023年6月28日(水))</a></li><li id="menu-18210-2" class="last even sf-item-6 sf-depth-3 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/tutorial/summercamp2022" class="sf-depth-3" style="">RTミドルウェアサマーキャンプ2022</a></li></ul></li><li id="menu-798-2" class="last even sf-item-4 sf-depth-2 sf-total-children-10 sf-parent-children-10 sf-single-children-0 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/content/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88-0" title="イベント" class="sf-depth-2 menuparent sf-with-ul" style="">イベント<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 16.75em;"><li id="menu-196489-2" class="first odd sf-item-1 sf-depth-3 sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2024" class="sf-depth-3 menuparent sf-with-ul" style="">RTミドルウェアコンテスト2024<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 21.75em;"><li id="menu-246629-2" class="firstandlast odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2024-award" class="sf-depth-4" style="">RTミドルウェアコンテスト2024奨励賞一覧</a></li></ul></li><li id="menu-18213-2" class="middle even sf-item-2 sf-depth-3 sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2023" class="sf-depth-3 menuparent sf-with-ul" style="">RTミドルウェアコンテスト2023<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 21.75em;"><li id="menu-18214-2" class="firstandlast odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2023-award" class="sf-depth-4" style="">RTミドルウェアコンテスト2023奨励賞一覧</a></li></ul></li><li id="menu-18206-2" class="middle odd sf-item-3 sf-depth-3 sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2022" class="sf-depth-3 menuparent sf-with-ul" style="">RTミドルウェアコンテスト2022<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 21.75em;"><li id="menu-18207-2" class="firstandlast odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2022-award" class="sf-depth-4" style="">RTミドルウェアコンテスト2022奨励賞一覧</a></li></ul></li><li id="menu-16263-2" class="middle even sf-item-4 sf-depth-3 sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2021" class="sf-depth-3 menuparent sf-with-ul" style="">RTミドルウェアコンテスト2021<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 21.75em;"><li id="menu-16351-2" class="firstandlast odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2021-award" class="sf-depth-4" style="">RTミドルウェアコンテスト2021奨励賞一覧</a></li></ul></li><li id="menu-15996-2" class="middle odd sf-item-5 sf-depth-3 sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2020" title="" class="sf-depth-3 menuparent sf-with-ul" style="">RTミドルウェアコンテスト2020<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 21.75em;"><li id="menu-15997-2" class="firstandlast odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2020-award" class="sf-depth-4" style="">RTミドルウェアコンテスト2020奨励賞一覧</a></li></ul></li><li id="menu-15082-2" class="middle even sf-item-6 sf-depth-3 sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2019" title="RTミドルウェアコンテスト2019" class="sf-depth-3 menuparent sf-with-ul" style="">RTミドルウェアコンテスト2019<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 21.75em;"><li id="menu-15552-2" class="firstandlast odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2019-award" class="sf-depth-4" style="">RTミドルウェアコンテスト2019奨励賞一覧</a></li></ul></li><li id="menu-14088-2" class="middle odd sf-item-7 sf-depth-3 sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2018" title="RTミドルウェアコンテスト2018" class="sf-depth-3 menuparent sf-with-ul" style="">RTミドルウェアコンテスト2018<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 21.75em;"><li id="menu-14089-2" class="firstandlast odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2018-award" title="RTミドルウェアコンテスト2018奨励賞一覧" class="sf-depth-4" style="">RTミドルウェアコンテスト2018奨励賞一覧</a></li></ul></li><li id="menu-13737-2" class="middle even sf-item-8 sf-depth-3 sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2017" title="RTミドルウェアコンテスト2017" class="sf-depth-3 menuparent sf-with-ul" style="">RTミドルウェアコンテスト2017<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 21.75em;"><li id="menu-13738-2" class="firstandlast odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2017-award" title="RTミドルウェアコンテスト2017奨励賞一覧" class="sf-depth-4" style="">RTミドルウェアコンテスト2017奨励賞一覧</a></li></ul></li><li id="menu-12258-2" class="middle odd sf-item-9 sf-depth-3 sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2016" title="RTミドルウェアコンテスト2016" class="sf-depth-3 menuparent sf-with-ul" style="">RTミドルウェアコンテスト2016<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 21.75em;"><li id="menu-12277-2" class="firstandlast odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2016-award" title="RTミドルウェアコンテスト2016奨励賞一覧" class="sf-depth-4" style="">RTミドルウェアコンテスト2016奨励賞一覧</a></li></ul></li><li id="menu-11805-2" class="last even sf-item-10 sf-depth-3 sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2015" title="RTミドルウェアコンテスト2015" class="sf-depth-3 menuparent sf-with-ul" style="">RTミドルウェアコンテスト2015<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="left: 100%; float: none; width: 21.75em;"><li id="menu-12049-2" class="firstandlast odd sf-item-1 sf-depth-4 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/rtmcontest2015-award" title="RTミドルウェアコンテスト2015奨励賞一覧" class="sf-depth-4" style="">RTミドルウェアコンテスト2015奨励賞一覧</a></li></ul></li></ul></li></ul></li><li id="menu-2563-2" class="middle odd sf-item-5 sf-depth-1 sf-total-children-4 sf-parent-children-0 sf-single-children-4 menuparent"><a href="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/researchanddevel" title="研究開発" class="sf-depth-1 menuparent sf-with-ul">研究開発<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="float: none; width: 12em;"><li id="menu-634-2" class="first odd sf-item-1 sf-depth-2 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/publication" title="論文・受賞" class="sf-depth-2" style="">論文・受賞</a></li><li id="menu-839-2" class="middle even sf-item-2 sf-depth-2 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/%E3%83%97%E3%83%AC%E3%82%B9%E3%83%BB%E5%A0%B1%E9%81%93" title="プレス・報道" class="sf-depth-2" style="">プレス・報道</a></li><li id="menu-832-2" class="middle odd sf-item-3 sf-depth-2 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/%E6%8A%80%E8%A1%93%E7%A7%BB%E8%BB%A2-1" title="技術移転" class="sf-depth-2" style="">技術移転</a></li><li id="menu-14386-2" class="last even sf-item-4 sf-depth-2 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/%E6%A8%99%E6%BA%96%E5%8C%96" class="sf-depth-2" style="">標準化</a></li></ul></li><li id="menu-4476-2" class="middle even sf-item-6 sf-depth-1 sf-total-children-4 sf-parent-children-0 sf-single-children-4 menuparent"><a href="https://openrtm.org/openrtm/ja/project/projects_ja" title="プロジェクト" class="sf-depth-1 menuparent sf-with-ul">プロジェクト<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden sub-menu" style="float: none; width: 12em;"><li id="menu-4478-2" class="first odd sf-item-1 sf-depth-2 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/rt%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88" title="RTコンポーネント" class="sf-depth-2" style="">RTコンポーネント</a></li><li id="menu-4477-2" class="middle even sf-item-2 sf-depth-2 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/rt%E3%83%9F%E3%83%89%E3%83%AB%E3%82%A6%E3%82%A7%E3%82%A2" title="RTミドルウェア" class="sf-depth-2" style="">RTミドルウェア</a></li><li id="menu-4479-2" class="middle odd sf-item-3 sf-depth-2 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/%E3%83%84%E3%83%BC%E3%83%AB" title="ツール" class="sf-depth-2" style="">ツール</a></li><li id="menu-4480-2" class="last even sf-item-4 sf-depth-2 sf-no-children" style=""><a href="https://openrtm.org/openrtm/ja/content/%E4%BB%95%E6%A7%98%E3%83%BB%E6%96%87%E6%9B%B8%E7%AD%89" title="仕様・文書等" class="sf-depth-2" style="">仕様・文書等</a></li></ul></li><li id="menu-6722-2" class="middle odd sf-item-7 sf-depth-1 sf-no-children"><a href="https://openrtm.org/openrtm/ja/content/%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A8%E3%82%A2" title="RTCとともに利用可能なハードウエアのリスト" class="sf-depth-1">ハードウエア</a></li><li id="menu-8868-2" class="last even sf-item-8 sf-depth-1 sf-no-children"><a href="https://openrtm.org/openrtm/ja/content/pukiwiki%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB" title="Pukiwikiマニュアル" class="sf-depth-1">Pukiwikiマニュアル</a></li></ul><select class="select-menu menu sf-menu sf-menu-side-menu-ja sf-horizontal sf-style-none sf-total-items-8 sf-parent-items-5 sf-single-items-3 superfish-processed sf-js-enabled sf-shadow"><option value="#">Navigate to...</option><option value="https://openrtm.org/openrtm/ja">&nbsp;ホーム</option><option value="https://openrtm.org/openrtm/ja/download">&nbsp;ダウンロード</option><option value="https://openrtm.org/openrtm/ja/doc">&nbsp;ドキュメント »</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm">–&nbsp;OpenRTM-aistとは？ »</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rtmiddleware">––&nbsp;RTミドルウエア</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/license">––&nbsp;ライセンス</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/specification">––&nbsp;OpenRTM-aist 諸元</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rtc_architecture">––&nbsp;RTCアーキテクチャ</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rtc_developmentflow">––&nbsp;RTC開発の流れ</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rts_developmentflow">––&nbsp;RTシステム開発の流れ</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rts_developmentflow">––&nbsp;RTS開発の流れ</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/researchanddevel">––&nbsp;研究開発</option><option value="https://openrtm.org/openrtm/ja/node/7240">––&nbsp;docker_test</option><option value="https://openrtm.org/openrtm/ja/doc/installation">–&nbsp;インストール »</option><option value="https://openrtm.org/openrtm/ja/doc/installation/lets_start">––&nbsp;OpenRTM-aistを10分で始めよう！</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_2_0">––&nbsp;2.0系のインストール »</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_2_0/install_win_2_0">–––&nbsp;Windows</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_2_0/install_linux_2_0">–––&nbsp;Linux</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_2_0/install_raspbian_2_0">–––&nbsp;Raspberry Pi OS</option><option value="https://openrtm.org/openrtm/ja/doc/installation/sample_components">––&nbsp;OpenRTM付属のサンプルコンポーネント</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_rtshell">––&nbsp;rtshellのインストール</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_2">––&nbsp;1.2系のインストール »</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_2/cpp_1_2">–––&nbsp;C++版1.2系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_2/python_1_2">–––&nbsp;Python版1.2系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_2/java_1_2">–––&nbsp;Java版 1.2系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_2/eclipse">–––&nbsp;OpenRTP 1.2系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_1">––&nbsp;1.1系のインストール »</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_1/cpp_1_1">–––&nbsp;C++版 1.1系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_1/python_1_1">–––&nbsp;Python版 1.1系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_1/java_1_1">–––&nbsp;Java版 1.1系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_1/openrtm_eclipse_tools_1_1">–––&nbsp;OpenRTM Eclipse tools のインストール 1.1系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/other">––&nbsp;その他</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals">–&nbsp;ツール »</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtsystemeditor-1_2_0">––&nbsp;RTSystemEditor-1.2.0</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtc_builder-1_2_0">––&nbsp;RTCBuilder-1.2.0</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtsystemeditor-1_1_0">––&nbsp;RTSystemEditor-1.1.0</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtcbuilder-1_1_0">––&nbsp;RTCBuilder-1.1.0</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtsystemeditor-1_0_0">––&nbsp;RTSystemEditor-1.0.0</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtcbuilder-1_0_0">––&nbsp;RTCBuilder-1.0.0</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtshell">––&nbsp;rtshell</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rostransport">––&nbsp;ROSトランスポート(rosport)</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide">–&nbsp;OpenRTM-aistデベロッパーズガイド »</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming">––&nbsp;RTCプログラミング入門 »</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/rtcdevelflow">–––&nbsp;プログラミングの流れ</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/dataport">–––&nbsp;データポート</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/servcieport">–––&nbsp;サービスポート</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/configuration">–––&nbsp;コンフィギュレーション</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/configuration_file_commandlineoption">–––&nbsp;設定ファイルとコマンドラインオプション</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/manager">–––&nbsp;マネージャ</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/rtc_conf_reference">–––&nbsp;rtc.conf設定項目一覧</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/comp_conf_reference">–––&nbsp;component.conf 設定項目一覧</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/advanced_rtc_programming">––&nbsp;RTCプログラミング (応用編) »</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/dataport_advanced">–––&nbsp;データポート (応用編)</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/serviceport_adavanced">–––&nbsp;サービスポート (応用編)</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/sdo_service">–––&nbsp;SDO サービス編</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/configuration_adavanced">–––&nbsp;コンフィギュレーション (応用編)</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/rt_system_development">––&nbsp;RTシステム開発入門</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/advanced_rt_system_programming">––&nbsp;RTシステム開発 (応用編)</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/inside_openrtm-aist">––&nbsp;インサイドOpenRTM-aist</option><option value="https://openrtm.org/openrtm/ja/doc/openrtm-aist_class_reference">–&nbsp;OpenRTM-aist クラスリファレンス</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy">–&nbsp;ケーススタディ »</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/opencv_comp_development">––&nbsp;画像処理コンポーネントの作成</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/rtc_development">––&nbsp;RTコンポーネントの作成</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/guitool_and_rtc">––&nbsp;GUI ツールキットとRTCの連携</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/lego_mindstorm">––&nbsp;LEGO Mindstorms EV3 活用事例</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/leapmotion_choreonoid">––&nbsp;LeapMotionでChoreonoidの制御</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/vpn_setup_for_rtmnetwork">––&nbsp;VPNを利用したRTMネットワーク設定方法</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/raspberypi_mouse">––&nbsp;Raspberry Pi Mouse 活用事例</option><option value="https://openrtm.org/openrtm/ja/doc/corba">–&nbsp;CORBA »</option><option value="https://openrtm.org/openrtm/ja/doc/corba/ccm">––&nbsp;CCM</option><option value="https://openrtm.org/openrtm/ja/doc/corba/idlcompiler">––&nbsp;IDLコンパイラ</option><option value="https://openrtm.org/openrtm/ja/doc/corba/mico_ccm">––&nbsp;MICO_CCM</option><option value="https://openrtm.org/openrtm/ja/doc/corba/type">––&nbsp;_var_type, _ptr_type</option><option value="https://openrtm.org/openrtm/ja/doc/corba/rules_to_pass_variable">––&nbsp;変数受渡規則</option><option value="https://openrtm.org/openrtm/ja/doc/faq">–&nbsp;よくある質問 »</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_rtm_openrtm-aist">––&nbsp;RTミドルウェア / OpenRTM-aist について</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_common_license">––&nbsp;一般・ライセンスに関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_install">––&nbsp;インストールに関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_rtc_creation">––&nbsp;RTコンポーネント作成に関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_openrtm_cpp">––&nbsp;OpenRTM-aist (C++版) に関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_openrtm_python">––&nbsp;OpenRTM-aist (Python版) に関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_openrtm_java">––&nbsp;OpenRTM-aist (Java版) に関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_rtp_tools">––&nbsp;RTSystemEditor、RTCBuilder、rtshell 等ツールに関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_other">––&nbsp;その他 FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_old">––&nbsp;過去に掲載した FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/old_document">–&nbsp;過去文書</option><option value="https://openrtm.org/openrtm/ja/community">&nbsp;コミュニティ »</option><option value="https://openrtm.org/openrtm/ja/community/mailinglist_ja">–&nbsp;メーリングリスト</option><option value="https://openrtm.org/openrtm/ja/community/forum_ja">–&nbsp;フォーラム</option><option value="https://openrtm.org/openrtm/ja/tutorials">–&nbsp;講習会 »</option><option value="https://openrtm.org/openrtm/ja/tutorial/robomech2025">––&nbsp;ROBOMECH2025講習会 (2025年6月4日(水))</option><option value="https://openrtm.org/openrtm/ja/tutorial/summercamp2024">––&nbsp;RTミドルウェアサマーキャンプ2024</option><option value="https://openrtm.org/openrtm/ja/tutorial/robomech2024">––&nbsp;ROBOMECH2024講習会 (2024年5月29日(水))</option><option value="https://openrtm.org/openrtm/ja/node/7233/">––&nbsp;RTミドルウェアサマーキャンプ2023</option><option value="https://openrtm.org/openrtm/ja/tutorial/robomech2023">––&nbsp;ROBOMECH2023講習会 (2023年6月28日(水))</option><option value="https://openrtm.org/openrtm/ja/tutorial/summercamp2022">––&nbsp;RTミドルウェアサマーキャンプ2022</option><option value="https://openrtm.org/openrtm/ja/content/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88-0">–&nbsp;イベント »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2024">––&nbsp;RTミドルウェアコンテスト2024 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2024-award">–––&nbsp;RTミドルウェアコンテスト2024奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2023">––&nbsp;RTミドルウェアコンテスト2023 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2023-award">–––&nbsp;RTミドルウェアコンテスト2023奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2022">––&nbsp;RTミドルウェアコンテスト2022 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2022-award">–––&nbsp;RTミドルウェアコンテスト2022奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2021">––&nbsp;RTミドルウェアコンテスト2021 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2021-award">–––&nbsp;RTミドルウェアコンテスト2021奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2020">––&nbsp;RTミドルウェアコンテスト2020 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2020-award">–––&nbsp;RTミドルウェアコンテスト2020奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2019">––&nbsp;RTミドルウェアコンテスト2019 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2019-award">–––&nbsp;RTミドルウェアコンテスト2019奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2018">––&nbsp;RTミドルウェアコンテスト2018 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2018-award">–––&nbsp;RTミドルウェアコンテスト2018奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2017">––&nbsp;RTミドルウェアコンテスト2017 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2017-award">–––&nbsp;RTミドルウェアコンテスト2017奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2016">––&nbsp;RTミドルウェアコンテスト2016 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2016-award">–––&nbsp;RTミドルウェアコンテスト2016奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2015">––&nbsp;RTミドルウェアコンテスト2015 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2015-award">–––&nbsp;RTミドルウェアコンテスト2015奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/researchanddevel">&nbsp;研究開発 »</option><option value="https://openrtm.org/openrtm/ja/publication">–&nbsp;論文・受賞</option><option value="https://openrtm.org/openrtm/ja/content/%E3%83%97%E3%83%AC%E3%82%B9%E3%83%BB%E5%A0%B1%E9%81%93">–&nbsp;プレス・報道</option><option value="https://openrtm.org/openrtm/ja/content/%E6%8A%80%E8%A1%93%E7%A7%BB%E8%BB%A2-1">–&nbsp;技術移転</option><option value="https://openrtm.org/openrtm/ja/content/%E6%A8%99%E6%BA%96%E5%8C%96">–&nbsp;標準化</option><option value="https://openrtm.org/openrtm/ja/project/projects_ja">&nbsp;プロジェクト »</option><option value="https://openrtm.org/openrtm/ja/content/rt%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88">–&nbsp;RTコンポーネント</option><option value="https://openrtm.org/openrtm/ja/content/rt%E3%83%9F%E3%83%89%E3%83%AB%E3%82%A6%E3%82%A7%E3%82%A2">–&nbsp;RTミドルウェア</option><option value="https://openrtm.org/openrtm/ja/content/%E3%83%84%E3%83%BC%E3%83%AB">–&nbsp;ツール</option><option value="https://openrtm.org/openrtm/ja/content/%E4%BB%95%E6%A7%98%E3%83%BB%E6%96%87%E6%9B%B8%E7%AD%89">–&nbsp;仕様・文書等</option><option value="https://openrtm.org/openrtm/ja/content/%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A8%E3%82%A2">&nbsp;ハードウエア</option><option value="https://openrtm.org/openrtm/ja/content/pukiwiki%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB">&nbsp;Pukiwikiマニュアル</option></select><select class="select-menu menu sf-menu sf-menu-side-menu-ja sf-horizontal sf-style-none sf-total-items-8 sf-parent-items-5 sf-single-items-3 superfish-processed sf-js-enabled sf-shadow"><option value="#">Navigate to...</option><option value="https://openrtm.org/openrtm/ja">&nbsp;ホーム</option><option value="https://openrtm.org/openrtm/ja/download">&nbsp;ダウンロード</option><option value="https://openrtm.org/openrtm/ja/doc">&nbsp;ドキュメント »</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm">–&nbsp;OpenRTM-aistとは？ »</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rtmiddleware">––&nbsp;RTミドルウエア</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/license">––&nbsp;ライセンス</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/specification">––&nbsp;OpenRTM-aist 諸元</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rtc_architecture">––&nbsp;RTCアーキテクチャ</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rtc_developmentflow">––&nbsp;RTC開発の流れ</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rts_developmentflow">––&nbsp;RTシステム開発の流れ</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/rts_developmentflow">––&nbsp;RTS開発の流れ</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/researchanddevel">––&nbsp;研究開発</option><option value="https://openrtm.org/openrtm/ja/node/7240">––&nbsp;docker_test</option><option value="https://openrtm.org/openrtm/ja/doc/installation">–&nbsp;インストール »</option><option value="https://openrtm.org/openrtm/ja/doc/installation/lets_start">––&nbsp;OpenRTM-aistを10分で始めよう！</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_2_0">––&nbsp;2.0系のインストール »</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_2_0/install_win_2_0">–––&nbsp;Windows</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_2_0/install_linux_2_0">–––&nbsp;Linux</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_2_0/install_raspbian_2_0">–––&nbsp;Raspberry Pi OS</option><option value="https://openrtm.org/openrtm/ja/doc/installation/sample_components">––&nbsp;OpenRTM付属のサンプルコンポーネント</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_rtshell">––&nbsp;rtshellのインストール</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_2">––&nbsp;1.2系のインストール »</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_2/cpp_1_2">–––&nbsp;C++版1.2系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_2/python_1_2">–––&nbsp;Python版1.2系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_2/java_1_2">–––&nbsp;Java版 1.2系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_2/eclipse">–––&nbsp;OpenRTP 1.2系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_1">––&nbsp;1.1系のインストール »</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_1/cpp_1_1">–––&nbsp;C++版 1.1系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_1/python_1_1">–––&nbsp;Python版 1.1系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_1/java_1_1">–––&nbsp;Java版 1.1系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/install_1_1/openrtm_eclipse_tools_1_1">–––&nbsp;OpenRTM Eclipse tools のインストール 1.1系</option><option value="https://openrtm.org/openrtm/ja/doc/installation/other">––&nbsp;その他</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals">–&nbsp;ツール »</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtsystemeditor-1_2_0">––&nbsp;RTSystemEditor-1.2.0</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtc_builder-1_2_0">––&nbsp;RTCBuilder-1.2.0</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtsystemeditor-1_1_0">––&nbsp;RTSystemEditor-1.1.0</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtcbuilder-1_1_0">––&nbsp;RTCBuilder-1.1.0</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtsystemeditor-1_0_0">––&nbsp;RTSystemEditor-1.0.0</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtcbuilder-1_0_0">––&nbsp;RTCBuilder-1.0.0</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rtshell">––&nbsp;rtshell</option><option value="https://openrtm.org/openrtm/ja/doc/toolmanuals/rostransport">––&nbsp;ROSトランスポート(rosport)</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide">–&nbsp;OpenRTM-aistデベロッパーズガイド »</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming">––&nbsp;RTCプログラミング入門 »</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/rtcdevelflow">–––&nbsp;プログラミングの流れ</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/dataport">–––&nbsp;データポート</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/servcieport">–––&nbsp;サービスポート</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/configuration">–––&nbsp;コンフィギュレーション</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/configuration_file_commandlineoption">–––&nbsp;設定ファイルとコマンドラインオプション</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/manager">–––&nbsp;マネージャ</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/rtc_conf_reference">–––&nbsp;rtc.conf設定項目一覧</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/basic_rtc_programming/comp_conf_reference">–––&nbsp;component.conf 設定項目一覧</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/advanced_rtc_programming">––&nbsp;RTCプログラミング (応用編) »</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/dataport_advanced">–––&nbsp;データポート (応用編)</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/serviceport_adavanced">–––&nbsp;サービスポート (応用編)</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/sdo_service">–––&nbsp;SDO サービス編</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/configuration_adavanced">–––&nbsp;コンフィギュレーション (応用編)</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/rt_system_development">––&nbsp;RTシステム開発入門</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/advanced_rt_system_programming">––&nbsp;RTシステム開発 (応用編)</option><option value="https://openrtm.org/openrtm/ja/doc/developersguide/inside_openrtm-aist">––&nbsp;インサイドOpenRTM-aist</option><option value="https://openrtm.org/openrtm/ja/doc/openrtm-aist_class_reference">–&nbsp;OpenRTM-aist クラスリファレンス</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy">–&nbsp;ケーススタディ »</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/opencv_comp_development">––&nbsp;画像処理コンポーネントの作成</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/rtc_development">––&nbsp;RTコンポーネントの作成</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/guitool_and_rtc">––&nbsp;GUI ツールキットとRTCの連携</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/lego_mindstorm">––&nbsp;LEGO Mindstorms EV3 活用事例</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/leapmotion_choreonoid">––&nbsp;LeapMotionでChoreonoidの制御</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/vpn_setup_for_rtmnetwork">––&nbsp;VPNを利用したRTMネットワーク設定方法</option><option value="https://openrtm.org/openrtm/ja/doc/casestudy/raspberypi_mouse">––&nbsp;Raspberry Pi Mouse 活用事例</option><option value="https://openrtm.org/openrtm/ja/doc/corba">–&nbsp;CORBA »</option><option value="https://openrtm.org/openrtm/ja/doc/corba/ccm">––&nbsp;CCM</option><option value="https://openrtm.org/openrtm/ja/doc/corba/idlcompiler">––&nbsp;IDLコンパイラ</option><option value="https://openrtm.org/openrtm/ja/doc/corba/mico_ccm">––&nbsp;MICO_CCM</option><option value="https://openrtm.org/openrtm/ja/doc/corba/type">––&nbsp;_var_type, _ptr_type</option><option value="https://openrtm.org/openrtm/ja/doc/corba/rules_to_pass_variable">––&nbsp;変数受渡規則</option><option value="https://openrtm.org/openrtm/ja/doc/faq">–&nbsp;よくある質問 »</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_rtm_openrtm-aist">––&nbsp;RTミドルウェア / OpenRTM-aist について</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_common_license">––&nbsp;一般・ライセンスに関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_install">––&nbsp;インストールに関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_rtc_creation">––&nbsp;RTコンポーネント作成に関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_openrtm_cpp">––&nbsp;OpenRTM-aist (C++版) に関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_openrtm_python">––&nbsp;OpenRTM-aist (Python版) に関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_openrtm_java">––&nbsp;OpenRTM-aist (Java版) に関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_rtp_tools">––&nbsp;RTSystemEditor、RTCBuilder、rtshell 等ツールに関する FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_other">––&nbsp;その他 FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/faq/faq_old">––&nbsp;過去に掲載した FAQ</option><option value="https://openrtm.org/openrtm/ja/doc/old_document">–&nbsp;過去文書</option><option value="https://openrtm.org/openrtm/ja/community">&nbsp;コミュニティ »</option><option value="https://openrtm.org/openrtm/ja/community/mailinglist_ja">–&nbsp;メーリングリスト</option><option value="https://openrtm.org/openrtm/ja/community/forum_ja">–&nbsp;フォーラム</option><option value="https://openrtm.org/openrtm/ja/tutorials">–&nbsp;講習会 »</option><option value="https://openrtm.org/openrtm/ja/tutorial/robomech2025">––&nbsp;ROBOMECH2025講習会 (2025年6月4日(水))</option><option value="https://openrtm.org/openrtm/ja/tutorial/summercamp2024">––&nbsp;RTミドルウェアサマーキャンプ2024</option><option value="https://openrtm.org/openrtm/ja/tutorial/robomech2024">––&nbsp;ROBOMECH2024講習会 (2024年5月29日(水))</option><option value="https://openrtm.org/openrtm/ja/node/7233/">––&nbsp;RTミドルウェアサマーキャンプ2023</option><option value="https://openrtm.org/openrtm/ja/tutorial/robomech2023">––&nbsp;ROBOMECH2023講習会 (2023年6月28日(水))</option><option value="https://openrtm.org/openrtm/ja/tutorial/summercamp2022">––&nbsp;RTミドルウェアサマーキャンプ2022</option><option value="https://openrtm.org/openrtm/ja/content/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88-0">–&nbsp;イベント »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2024">––&nbsp;RTミドルウェアコンテスト2024 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2024-award">–––&nbsp;RTミドルウェアコンテスト2024奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2023">––&nbsp;RTミドルウェアコンテスト2023 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2023-award">–––&nbsp;RTミドルウェアコンテスト2023奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2022">––&nbsp;RTミドルウェアコンテスト2022 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2022-award">–––&nbsp;RTミドルウェアコンテスト2022奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2021">––&nbsp;RTミドルウェアコンテスト2021 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2021-award">–––&nbsp;RTミドルウェアコンテスト2021奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2020">––&nbsp;RTミドルウェアコンテスト2020 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2020-award">–––&nbsp;RTミドルウェアコンテスト2020奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2019">––&nbsp;RTミドルウェアコンテスト2019 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2019-award">–––&nbsp;RTミドルウェアコンテスト2019奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2018">––&nbsp;RTミドルウェアコンテスト2018 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2018-award">–––&nbsp;RTミドルウェアコンテスト2018奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2017">––&nbsp;RTミドルウェアコンテスト2017 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2017-award">–––&nbsp;RTミドルウェアコンテスト2017奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2016">––&nbsp;RTミドルウェアコンテスト2016 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2016-award">–––&nbsp;RTミドルウェアコンテスト2016奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2015">––&nbsp;RTミドルウェアコンテスト2015 »</option><option value="https://openrtm.org/openrtm/ja/content/rtmcontest2015-award">–––&nbsp;RTミドルウェアコンテスト2015奨励賞一覧</option><option value="https://openrtm.org/openrtm/ja/doc/aboutopenrtm/researchanddevel">&nbsp;研究開発 »</option><option value="https://openrtm.org/openrtm/ja/publication">–&nbsp;論文・受賞</option><option value="https://openrtm.org/openrtm/ja/content/%E3%83%97%E3%83%AC%E3%82%B9%E3%83%BB%E5%A0%B1%E9%81%93">–&nbsp;プレス・報道</option><option value="https://openrtm.org/openrtm/ja/content/%E6%8A%80%E8%A1%93%E7%A7%BB%E8%BB%A2-1">–&nbsp;技術移転</option><option value="https://openrtm.org/openrtm/ja/content/%E6%A8%99%E6%BA%96%E5%8C%96">–&nbsp;標準化</option><option value="https://openrtm.org/openrtm/ja/project/projects_ja">&nbsp;プロジェクト »</option><option value="https://openrtm.org/openrtm/ja/content/rt%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88">–&nbsp;RTコンポーネント</option><option value="https://openrtm.org/openrtm/ja/content/rt%E3%83%9F%E3%83%89%E3%83%AB%E3%82%A6%E3%82%A7%E3%82%A2">–&nbsp;RTミドルウェア</option><option value="https://openrtm.org/openrtm/ja/content/%E3%83%84%E3%83%BC%E3%83%AB">–&nbsp;ツール</option><option value="https://openrtm.org/openrtm/ja/content/%E4%BB%95%E6%A7%98%E3%83%BB%E6%96%87%E6%9B%B8%E7%AD%89">–&nbsp;仕様・文書等</option><option value="https://openrtm.org/openrtm/ja/content/%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A8%E3%82%A2">&nbsp;ハードウエア</option><option value="https://openrtm.org/openrtm/ja/content/pukiwiki%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB">&nbsp;Pukiwikiマニュアル</option></select>	</div>
+</div>
+<div id="block-search-form" class="block-search-form block block-search block-even">
+	<!-- Block title -->
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<form action="https://openrtm.org/openrtm/ja/doc/casestudy/processing" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">検索フォーム</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">検索 </label>
+ <input title="検索したいキーワードを入力してください" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="検索" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-S4sgaspWxzsWJR4s7cgWGqBXINQzmqo-e7ud0D2Rbi8">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form>	</div>
+</div>  </div>
+						</div>
+					</div>
+				</div>
+			</div><div class="pseudoStickyBlock" style="position: relative; display: block; height: 0px;"></div><div class="pseudoStickyBlock" style="position: relative; display: block; height: 0px;"></div>
+
+			<!-- Region Slider content -->
+			
+			<!-- Region Header -->
+						<!-- Region Header bottom -->
+			
+		</header>
+
+		<!-- Content
+		======================================================================================= -->
+		<div id="main-wrapper" class="main-wrapper clearfix" role="main">
+			<!-- Region Header bottom -->
+						<!-- Region content top -->
+			<div id="content_top_wrapper" class="content_top_wrapper">
+<div class="container-12"><div class="grid-12">  <div class="region region-content-top">
+    
+<div id="block-tm-follow-site" class="block-tm-follow-site block block-tm-follow block-odd">
+	<!-- Block title -->
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<div class="tm-follow-links clearfix site"><span class="tm-follow-link-wrapper tm-follow-link-wrapper-facebook without-label"><a href="http://www.facebook.com/openrtm" class="tm-follow-link tm-follow-link-facebook tm-follow-link-site"></a>
+</span><span class="tm-follow-link-wrapper tm-follow-link-wrapper-youtube without-label"><a href="https://www.youtube.com/user/OpenRTM" class="tm-follow-link tm-follow-link-youtube tm-follow-link-site"></a>
+</span><span class="tm-follow-link-wrapper tm-follow-link-wrapper-twitter without-label"><a href="https://twitter.com/openrtm" class="tm-follow-link tm-follow-link-twitter tm-follow-link-site"></a>
+</span><span class="tm-follow-link-wrapper tm-follow-link-wrapper-github without-label"><a href="https://github.com/openrtm" class="tm-follow-link tm-follow-link-github tm-follow-link-site"></a>
+</span></div>	</div>
+</div>
+<div id="block-system-user-menu" class="block-system-user-menu block block-system block-menu block-even">
+	<!-- Block title -->
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<ul class="menu clearfix"><li class="first leaf github-pages mid-14950"><a href="https://openrtm.github.io/" title="">Github Pages</a></li>
+<li class="last leaf id- mid-13672"><a href="https://openrtm.org/openrtm/ja/user/login">ログイン</a></li>
+</ul>	</div>
+</div>
+<div id="block-locale-language" class="block-locale-language block block-locale block-odd">
+	<!-- Block title -->
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<ul class="language-switcher-locale-url"><li class="ja first active"><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing" class="language-link active" xml:lang="ja"><img class="language-icon" src="./Processing 活用事例 _ OpenRTM-aist_files/ja.png" width="16" height="12" alt="日本語" title="日本語"></a></li>
+<li class="en last"><span class="language-link locale-untranslated" xml:lang="en"><img class="language-icon" src="./Processing 活用事例 _ OpenRTM-aist_files/en.png" width="16" height="12" alt="English" title="English"></span></li>
+</ul>	</div>
+</div>  </div>
+</div></div></div>			
+			<div class="container-12">
+				<div class="grid-12">
+					<div id="main" class="main clearfix">
+						
+						<!-- Page content -->
+						<div id="content" class="content content-main ">
+															<header id="content-header" class="content-header">
+									
+									
+																			<!-- Breadcrumbs -->
+										<div id="breadcrumb" class="breadcrumb clearfix"><h2 class="element-invisible">現在地</h2><a href="https://openrtm.org/openrtm/ja">ホーム</a> » <a href="https://openrtm.org/openrtm/ja/doc/casestudy">ケーススタディ</a> » Processing 活用事例</div>
+									
+																				<!-- Page title -->
+											<h2 id="page-title" class="title page-title">Processing 活用事例</h2>
+										
+									
+									
+																	</header>
+							
+							<!-- Page content -->
+							  <div class="region region-content">
+    
+<div id="block-system-main" class="block-system-main block block-system block-even">
+	<!-- Block title -->
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<div id="node-7232" class="node node-book node-odd published with-comments node-full clearfix node-7232" role="article">
+			<header class="node-header clearfix">
+			<!-- Node title -->
+			
+			<!-- Node meta -->
+					</header>
+	
+	<div class="content node-content">
+		
+		<!-- Node content -->
+		
+<iframe src="./Processing 活用事例 _ OpenRTM-aist_files/like.html" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 350px; height: 40px; " allowtransparency="true"></iframe>
+<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><ul class="toc-list"><ul><li><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#toc0">Processingとは？</a></li><li><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#toc1">実習概要</a></li><li><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#toc2">drawGraphコンポーネントの作成</a><ul><li><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#toc3">RTCBuilderによるひな型コード生成</a></li><li><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#toc4">RTC::TimedPose2D型について</a></li></ul></li><li><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#toc5">Processing開発環境の起動</a></li><li><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#toc6">OpenRTM-aist Processing用ライブラリのインストール</a></li><li><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#toc7">graficaのインストール</a></li><li><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#toc8">プログラミング</a></li><li><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#toc9">RTシステムの構築、動作確認</a></li><li><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#toc10">OpenRTM-aist 2.0以前の手順</a></li></ul></ul>
+<h2 id="toc0">Processingとは？</h2>
+Processingはオープンソースのプログラミング言語で、以下の特長があることから初心者向けであるとされています。 <ul>
+    <li> 視覚的な表現が他の言語と比較して簡単(グラフや図形のアニメーションやインタラクション等)</li>
+    <li> 開発環境の導入が簡単</li>
+</ul>
+
+
+<h2 id="toc1">実習概要</h2>
+<p>Processingでグラフを描画するRTCを実行し、Raspberry Piマウスの移動軌跡をグラフに描画するシステムの作成します。</p>
+
+<br>
+<div class="pearwiki_align_center"><img src="./Processing 活用事例 _ OpenRTM-aist_files/processing10.png" alt="/ja/node/7232" title="/ja/node/7232" width="919" height="608"></div> <br>
+ 
+<h2 id="toc2">drawGraphコンポーネントの作成</h2>
+
+<h3 id="toc3">RTCBuilderによるひな型コード生成</h3>
+<p>下記の仕様で、RTCBuilderでdrawGraphコンポーネントを作成します。</p>
+
+
+
+<div class="pearwiki_table_block"><table class="pearwiki_table">
+    <tbody><tr class="pearwiki_tr">
+        <td class="pearwiki_td ">コンポーネント名称</td>
+        <td class="pearwiki_td ">drawGraph</td>
+    </tr>
+    <tr class="pearwiki_tr">
+        <td class="pearwiki_td ">アクティビティ</td>
+        <td class="pearwiki_td ">onActivated、onDeactivated、onExecute</td>
+    </tr>
+    <tr class="pearwiki_tr">
+        <td class="pearwiki_td ">言語</td>
+        <td class="pearwiki_td "><strong>Processing</strong></td>
+    </tr>
+    <tr class="pearwiki_tr">
+        <td class="pearwiki_td pearwiki_align_center" colspan="2">InPort</td>
+    </tr>
+    <tr class="pearwiki_tr">
+        <td class="pearwiki_td ">ポート名</td>
+        <td class="pearwiki_td ">in</td>
+    </tr>
+    <tr class="pearwiki_tr">
+        <td class="pearwiki_td ">型</td>
+        <td class="pearwiki_td ">RTC::TimedPose2D</td>
+    </tr>
+</tbody></table></div>
+
+
+<h3 id="toc4">RTC::TimedPose2D型について</h3>
+<p>RTC::CameraImage型は2次元平面状のを位置・姿勢を表現したデータ型です。</p>
+
+<p></p><div class="pearwiki_pre"><pre>    struct Point2D
+    {
+        /// X coordinate in metres.
+        double x;
+        /// Y coordinate in metres.
+        double y;
+    };
+ 
+    struct Pose2D
+    {
+        /// 2D position.
+        Point2D position;
+        /// Heading in radians.
+        double heading;
+    };</pre></div><p></p>
+
+<br>
+<div class="pearwiki_align_center"><img src="./Processing 活用事例 _ OpenRTM-aist_files/rtmtutorial12.png" alt="/ja/node/7232" title="/ja/node/7232" width="644" height="606"></div> <br>
+ 
+<h2 id="toc5">Processing開発環境の起動</h2>
+<p>まずは、ProcessingのIDE(統合開発環境)を起動します。</p>
+
+<p>Processingのリポジトリから開発環境一式をダウンロードしてください。</p>
+
+<ul>
+    <li> <a href="https://github.com/processing/processing/releases/tag/processing-0270-3.5.4">https://github.com/processing/processing/releases/tag/processing-0270-3.5.4</a></li>
+</ul>
+
+<p>展開したフォルダの<strong>processing.exe</strong>を実行してください。</p>
+
+<p>Javaのバージョンの問題により、OpenRTM-aistをProcessing 4.0以降の環境では現在のところ実行はできません。</p>
+
+<p>講習会などでUSBメモリの資料を配布している場合は、以下のファイルを実行してください。</p>
+
+<ul>
+    <li> Windowsの場合は<strong>Processing\processing-3.5.4-windows64\processing.exe</strong></li>
+    <li> Ubuntuの場合は<strong>Processing/processing-3.5.4-linux64/processing</strong></li>
+</ul>
+
+<p>実行すると、以下の統合開発環境のGUIが起動します。</p>
+
+<br>
+<div class="pearwiki_align_center"><img src="./Processing 活用事例 _ OpenRTM-aist_files/processing3.png" alt="/ja/node/7232" title="/ja/node/7232" width="687" height="593"></div> <br>
+ 
+<h2 id="toc6">OpenRTM-aist Processing用ライブラリのインストール</h2>
+<p>ProcessingでOpenRTM-aistの機能が使えるようにライブラリをインストールします。</p>
+
+<p>まず、Processingでスケッチブックの場所を確認します。 「ファイル」-&gt;「設定」を選択して表示される画面で確認できます。</p>
+
+<p><br>
+</p><div class="pearwiki_align_center"><img src="./Processing 活用事例 _ OpenRTM-aist_files/processing4.png" alt="/ja/node/7232" title="/ja/node/7232" width="416" height="486"></div> <br>
+ スケッチブックの場所をエクスプローラーで開いてください。<p></p>
+
+<p>スケッチブックの場所の<strong>libraries</strong>フォルダに、以下のOpenRTMUtil.zipを展開したフォルダをコピーします。</p>
+
+<ul>
+    <li> <a href="https://github.com/Nobu19800/OpenRTMProcessing/releases/download/robomech2024/OpenRTMUtil.zip">OpenRTMUtil.zip</a></li>
+</ul>
+
+<p>※講習会などではUSBメモリ内のProcessing\OpenRTMUtilフォルダを使用します。</p>
+
+<p>コピーすると、以下のようなディレクトリ構成になります。</p>
+
+<p></p><div class="pearwiki_pre"><pre> スケッチブックの場所
+    ├ examples
+    ├ modes
+    ├ templates
+    ├ tools
+    └ libraries
+         └ OpenRTMUtil
+                └  library
+                     ├ commons-cli-1.1.jar
+                     ├ jna-4.2.2.jar
+                     ├ jna-platform-4.2.2.jar
+                     ├ LogicalTimeTriggeredEC.jar
+                     ├ NameserviceFile.jar
+                     ├ OpenRTM-aist-2.1.0.jar
+                     ├ OpenRTMUtil.jar
+                     ├ rtcd.jar
+                     └ rtcprof.jar</pre></div><p></p>
+
+
+<h2 id="toc7">graficaのインストール</h2>
+<p>グラフ描画用ライブラリのgraficaをインストールします。</p>
+
+<p>Processingで「スケッチ」→「ライブラリをインポート」→「ライブラリを追加」をクリックしてください。</p>
+
+<p><br>
+</p><div class="pearwiki_align_center"><img src="./Processing 活用事例 _ OpenRTM-aist_files/processing5.png" alt="/ja/node/7232" title="/ja/node/7232" width="426" height="330"></div> <br>
+ Contribution Managerでgraficaを検索してインストールしてください。<p></p>
+
+<br>
+<div class="pearwiki_align_center"><img src="./Processing 活用事例 _ OpenRTM-aist_files/processing1.png" alt="/ja/node/7232" title="/ja/node/7232" width="592" height="544"></div> <br>
+ 
+<h2 id="toc8">プログラミング</h2>
+<p>ProcessingでRTCのプログラミングを行います。</p>
+
+<p>RTCBuilderで生成したソースコードの、<strong>drawGraphMain.pde</strong>をProcessingで開いてください。 drawGraphMain.pdeをprocessing.exeにドラッグアンドドロップすれば開けます。</p>
+
+<p>Processingのエディタから、<strong>drawGraphMain.pde</strong>のsetup関数に画面サイズ、フレームレートの設定処理を追加します。</p>
+
+<p></p><div class="pearwiki_pre"><pre> public void setup() {
+   //ウィンドウサイズを設定
+   size(300, 300); //追加
+   frameRate(10); //追加</pre></div><p></p>
+
+<p>次に、<strong>drawGraphImpl.pde</strong>を編集します。 下記のようにgrafinaライブラリのインポート文を追加してください。</p>
+
+<p></p><div class="pearwiki_pre"><pre> import RTC.ReturnCode_t;
+ 
+ import grafica.*; //追加</pre></div><p></p>
+
+<p>次に、下記の変数dataを宣言します。変数dataに受信した位置姿勢データが格納されます。</p>
+
+<p></p><div class="pearwiki_pre"><pre>    protected InPort&lt;TimedPose2D&gt; m_inIn;
+    
+    //グラフに描画する点のデータを格納する配列を宣言
+    GPointsArray data; //追加</pre></div><p></p>
+
+<p>onActivated関数を下記のように編集します。</p>
+
+<p></p><div class="pearwiki_pre"><pre>    @Override
+    protected ReturnCode_t onActivated(int ec_id) {
+        //配列dataの初期化
+        data = new GPointsArray();
+        return super.onActivated(ec_id);
+    }</pre></div><p></p>
+
+<p>最後にonExecute関数を下記のように編集します。</p>
+
+<p></p><div class="pearwiki_pre"><pre>    @Override
+    protected ReturnCode_t onExecute(int ec_id) {
+        //InPortでデータを受信した時の処理
+        if (m_inIn.isNew())
+        {
+          //受信データの読み込み
+          m_inIn.read();
+          //配列dataに取得した位置を追加する
+          data.add((float)m_in.v.data.position.x, 
+                   (float)m_in.v.data.position.y);
+      
+          //配列の大きさが1000を超えた場合、古いデータは捨てる
+          if (data.getNPoints() &gt; 1000)
+          {
+            data.remove(0);
+          }
+        }
+        //グラフをウィンドウの(0,0)から(300,300)の範囲に描画する
+        GPlot plot = new GPlot(m_applet, 0, 0, 300, 300);
+        //グラフの縦軸、横軸の上限、下限を設定する
+        plot.setXLim(-1.0, 1.0);
+        plot.setYLim(-1.0, 1.0);
+        plot.setFixedXLim(true);
+        plot.setFixedYLim(true);
+        //配列dataをグラフに設定する
+        plot.addPoints(data);
+        //グラフの描画を開始する
+        plot.beginDraw();
+        //グラフに外枠、座標、折れ線、縦軸、横軸を描画する
+        plot.drawBox();
+        plot.drawPoints();
+        plot.drawLines();
+        plot.drawXAxis();
+        plot.drawYAxis();
+        //グラフの描画を終了する
+        plot.endDraw();
+        return super.onExecute(ec_id);
+    }</pre></div><p></p>
+
+
+<h2 id="toc9">RTシステムの構築、動作確認</h2>
+<p>作成したdrawGraphコンポーネントの動作確認を行います。</p>
+
+<p>Raspberry Piマウスシミュレータ(<strong>RaspberryPiSimulator</strong>)、もしくはRaspberry Piマウス実機(<strong>RaspberryPiMouseRTC</strong>)のRTCを使用します。 また、以下のチュートリアルで作成した<strong>RobotController</strong>も使用します。</p>
+
+<ul>
+    <li> <a href="https://openrtm.org/openrtm/ja/node/6550">チュートリアル(RTコンポーネントの作成入門、Raspberry Pi Mouse、Windows)</a></li>
+</ul>
+
+<p>Processingで作成した<strong>drawGraph</strong>コンポーネントを起動します。 Processingの実行ボタンを押してください。</p>
+
+<p><br>
+</p><div class="pearwiki_align_center"><img src="./Processing 活用事例 _ OpenRTM-aist_files/rtmtutorial13.png" alt="/ja/node/7232" title="/ja/node/7232" width="780" height="673"></div> <br>
+ RTシステムエディタで以下のようにポートを接続してください。<p></p>
+
+<p><br>
+</p><div class="pearwiki_align_center"><img src="./Processing 活用事例 _ OpenRTM-aist_files/processing7.png" alt="/ja/node/7232" title="/ja/node/7232" width="518" height="274"></div> <br>
+ RTCをアクティブ化して、RobotControllerのコンフィギュレーションパラメータをスライダで操作するとRaspberry Piマウスが移動して、移動の軌跡がグラフに描画されます。<p></p>
+
+
+<h2 id="toc10">OpenRTM-aist 2.0以前の手順</h2>
+<p>OpenRTM-aist 2.0以前にはProcessingのコード生成機能がないため、下記のOpenRTMUtilライブラリを使ったソースコードが必要です。</p>
+
+<p>Processingの開発環境で以下のコードを入力してください。 Processingでは実行開始時に1度だけ呼ばれる<strong>setup</strong>関数、一定間隔で呼ばれる<strong>draw</strong>関数を使用します。 setup関数でRTCの生成を実行しています。 draw関数でInPortのデータの読み込みとグラフの描画更新処理を実行しています。</p>
+
+<p></p><div class="pearwiki_pre"><pre> import grafica.*;
+ import jp.go.aist.rtm.OpenRTMUtil;
+ import jp.go.aist.rtm.RTC.port.InPort;
+ import jp.go.aist.rtm.RTC.util.DataRef;
+ import RTC.TimedPose2D;
+ import RTC.Pose2D;
+ import RTC.Point2D;
+ import RTC.Time;
+ 
+ //データ、InPortの変数を宣言
+ DataRef&lt;TimedPose2D&gt; indata;
+ InPort&lt;TimedPose2D&gt; inport;
+ 
+ //グラフに描画する点のデータを格納する配列を宣言
+ GPointsArray data;
+ 
+ public void setup() {
+  //ウィンドウサイズを設定
+  size(300, 300);
+ 
+  //RTCを"drawGraph"というインスタンス名で生成
+  OpenRTMUtil util = new OpenRTMUtil();
+  util.createComponent("drawGraph");
+  //データの初期化
+  TimedPose2D val = new TimedPose2D();
+  val.tm = new Time();
+  val.data = new Pose2D();
+  val.data.position = new Point2D();
+  indata = new DataRef&lt;TimedPose2D&gt;(val);
+  //InPortを"pose"という名前で生成
+  inport = util.addInPort("pose", indata);
+ 
+  //配列dataの初期化
+  data = new GPointsArray();
+ }
+ 
+ int count = 0;
+ public void draw() {
+ 
+  //InPortでデータを受信した時の処理
+  if (inport.isNew())
+  {
+    //受信データの読み込み
+    inport.read();
+    //配列dataに取得した位置を追加する
+    data.add((float)indata.v.data.position.x, (float)indata.v.data.position.y);
+ 
+    //配列の大きさが1000を超えた場合、古いデータは捨てる
+    if (data.getNPoints() &gt; 1000)
+    {
+      data.remove(0);
+    }
+  }
+  //グラフをウィンドウの(0,0)から(300,300)の範囲に描画する
+  GPlot plot = new GPlot(this, 0, 0, 300, 300);
+  //グラフの縦軸、横軸の上限、下限を設定する
+  plot.setXLim(-1.0, 1.0);
+  plot.setYLim(-1.0, 1.0);
+  plot.setFixedXLim(true);
+  plot.setFixedYLim(true);
+  //配列dataをグラフに設定する
+  plot.addPoints(data);
+  //グラフの描画を開始する
+  plot.beginDraw();
+  //グラフに外枠、座標、折れ線、縦軸、横軸を描画する
+  plot.drawBox();
+  plot.drawPoints();
+  plot.drawLines();
+  plot.drawXAxis();
+  plot.drawYAxis();
+  //グラフの描画を終了する
+  plot.endDraw();
+ }</pre></div><p></p>
+
+
+
+</div></div></div>	<div id="book-navigation-110" class="book-navigation clearfix">
+					<div class="links page-links clearfix">
+									<a href="https://openrtm.org/openrtm/ja/content/build_ubuntu_codeblocks" class="page-previous" title="前のページへ">‹ コンパイル方法 (Ubuntu、CMake、Code::Blocks利用)</a>
+									<a href="https://openrtm.org/openrtm/ja/doc/casestudy" class="page-up" title="１階層上位のページへ">↑ 上位</a>
+							</div>
+			</div><!-- /.book-navigation -->
+	</div>
+
+			<footer class="footer node-footer" role="contentinfo">
+			<!-- Node tags -->
+						
+			<!-- Node links -->
+							<div class="node-links clearfix">
+					<ul class="links inline"><li class="addtoany first"><span><span class="a2a_kit a2a_kit_size_32 a2a_target addtoany_list" id="da2a_1">
+      
+      <a class="a2a_dd addtoany_share_save" href="https://www.addtoany.com/share#url=https%3A%2F%2Fopenrtm.org%2Fopenrtm%2Fja%2Fdoc%2Fcasestudy%2Fprocessing&amp;title=Processing%20%E6%B4%BB%E7%94%A8%E4%BA%8B%E4%BE%8B"><img src="./Processing 活用事例 _ OpenRTM-aist_files/share_save_171_16.png" width="171" height="16" alt="Share this"></a>
+      
+    </span>
+    <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if(window.da2a)da2a.script_load();
+//--><!]]>
+</script></span></li>
+<li class="book_printer"><a href="https://openrtm.org/openrtm/ja/book/export/html/7232" title="下位ページも含めた印刷用ページを表示">印刷用ページ</a></li>
+<li class="comment_forbidden last"><span><a href="https://openrtm.org/openrtm/ja/user/login?destination=comment/reply/7232%23comment-form">Log in</a> or <a href="https://openrtm.org/openrtm/ja/user/register?destination=comment/reply/7232%23comment-form">register</a> to post comments</span></li>
+</ul>				</div>
+					</footer>
+	</div>	</div>
+</div>  </div>
+						</div>
+
+											</div>
+				</div>
+			</div>
+			
+			<!-- Region Content bottom -->
+			<div id="content_bottom_wrapper" class="content_bottom_wrapper">
+<div class="container-12"><div class="grid-12">  <div class="region region-content-bottom">
+    
+<div id="block-panels-mini-front-page-block" class="block-panels-mini-front-page-block block block-panels-mini block-odd">
+	<!-- Block title -->
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<div class="panel-display panel-3col-33-stacked  clearfix" id="mini-panel-front_page_block">
+  
+  <div class="center-wrapper">
+    <div class="panel-panel panel-col-first">
+      <div class="inside"><div class="panel-pane pane-block pane-block-10 pane-block">
+  
+        <h2 class="pane-title">
+      ダウンロード    </h2>
+    
+  
+  <div class="pane-content">
+    
+<h1 id="toc11">最新バージョン : 2.0.2-RELESE</h1>
+
+
+<div class="pearwiki_table_block"><table class="pearwiki_table">
+    <tbody><tr class="pearwiki_tr">
+        <td class="pearwiki_td ">2.0.2-RELESE</td>
+        <td class="pearwiki_td "><a href="https://openrtm.org/openrtm/node/7154">ダウンロードページ</a></td>
+    </tr>
+</tbody></table></div>
+
+
+
+  </div>
+
+  
+  </div>
+</div>
+    </div>
+
+    <div class="panel-panel panel-col">
+      <div class="inside"><div class="panel-pane pane-block pane-block-38 pane-block">
+  
+        <h2 class="pane-title">
+      統計    </h2>
+    
+  
+  <div class="pane-content">
+    
+<center><b>Webサイト統計</b></center>
+<table class="pearwiki_table">
+<tbody><tr><td><b>ユーザ数:</b></td><td align="right">3370</td></tr>
+<!-- tr><td><b>ページビュー/日:</b></td><td align="right"></td></tr -->
+<!-- tr><td><b>訪問者数/日:</b></td><td align="right"></td></tr -->
+</tbody></table>
+
+<center><b>プロジェクト統計</b></center>
+<table class="pearwiki_table">
+<tbody><tr><td><a href="http://www.openrtm.org/openrtm/ja/content/rt%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88">RTコンポーネント</a></td><td align="right">309</td></tr>
+<tr><td><a href="http://www.openrtm.org/openrtm/ja/content/rt%E3%83%9F%E3%83%89%E3%83%AB%E3%82%A6%E3%82%A7%E3%82%A2">RTミドルウエア</a></td><td align="right">35</td></tr>
+<tr><td><a href="http://www.openrtm.org/openrtm/ja/content/%E3%83%84%E3%83%BC%E3%83%AB">ツール</a></td><td align="right">23</td></tr>
+<tr><td><a href="http://www.openrtm.org/openrtm/ja/content/%E4%BB%95%E6%A7%98%E3%83%BB%E6%96%87%E6%9B%B8%E7%AD%89">文書・仕様書</a></td><td align="right">2</td></tr>
+</tbody></table>
+
+
+  </div>
+
+  
+  </div>
+</div>
+    </div>
+
+    <div class="panel-panel panel-col-last">
+      <div class="inside"><div class="panel-pane pane-block pane-block-12 pane-block">
+  
+      
+  
+  <div class="pane-content">
+    
+<h2 id="toc12"><a href="http://choreonoid.org/ja/">Choreonoid</a></h2>
+<p>モーションエディタ/シミュレータ</p>
+
+
+<h2 id="toc13"><a href="http://fkanehiro.github.io/openhrp3-doc/">OpenHRP3</a></h2>
+<p>動力学シミュレータ</p>
+
+
+<h2 id="toc14"><a href="http://www.openrtp.org/">OpenRTP</a></h2>
+<p>統合開発プラットフォーム</p>
+
+
+<h2 id="toc15"><a href="http://openrtc.org/">産総研RTC集</a></h2>
+<p>産総研が提供するRTC集</p>
+
+
+<h2 id="toc16"><a href="http://www.opensource-robotics.tokyo.jp/">TORK</a></h2>
+<p>東京オープンソースロボティクス協会</p>
+
+
+<h2 id="toc17"><a href="http://daqmw.kek.jp/">DAQ-Middleware</a></h2>
+<p>ネットワーク分散環境でデータ収集用ソフトウェアを容易に構築するためのソフトウェア・フレームワーク</p>
+
+
+
+  </div>
+
+  
+  </div>
+</div>
+    </div>
+  </div>
+
+  </div>
+	</div>
+</div>  </div>
+</div></div></div>		</div>
+
+		<!-- Footer
+		======================================================================================= -->
+		<footer id="footer" class="footer page-footer" role="contentinfo">
+			<!-- Region Footer top -->
+			
+						<div class="footer-section-1">
+				<div class="container-12">
+					<div class="grid-12 border-1">
+						<div id="footer-left" class=" grid-8 alpha">
+							<!-- Footer Left -->
+															  <div class="region region-footer-left">
+    
+<div id="block-panels-mini-footer-navigation" class="block-panels-mini-footer-navigation block block-panels-mini block-even">
+	<!-- Block title -->
+			<h2 class="title block-title">Navigation</h2>
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<div class="panel-flexible panels-flexible-new clearfix" id="mini-panel-footer_navigation">
+<div class="panel-flexible-inside panels-flexible-new-inside">
+<div class="panels-flexible-region panels-flexible-region-new-center panels-flexible-region-first panels-flexible-region-last">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-new-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-menu-tree pane-menu-navibar-ja">
+  
+      
+  
+  <div class="pane-content">
+    <div class="menu-block-wrapper menu-block-ctools-menu-navibar-ja-1 menu-name-menu-navibar-ja parent-mlid-0 menu-level-1">
+  <ul class="menu clearfix"><li class="first leaf menu-mlid-1631 id- mid-1631"><a href="https://openrtm.org/openrtm/ja" title="ホーム">ホーム</a></li>
+<li class="leaf menu-mlid-1628 id- mid-1628"><a href="https://openrtm.org/openrtm/ja/node/619" title="ダウンロード">ダウンロード</a></li>
+<li class="leaf menu-mlid-1629 id- mid-1629"><a href="https://openrtm.org/openrtm/ja/doc" title="ドキュメント">ドキュメント</a></li>
+<li class="leaf menu-mlid-1630 id- mid-1630"><a href="https://openrtm.org/openrtm/ja/community" title="コミュニティ">コミュニティ</a></li>
+<li class="leaf menu-mlid-4493 id- mid-4493"><a href="https://openrtm.org/openrtm/ja/project/projects_ja" title="">プロジェクト</a></li>
+<li class="last leaf menu-mlid-6721 id- mid-6721"><a href="https://openrtm.org/openrtm/ja/content/%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A8%E3%82%A2" title="RTCとともに利用可能なハードウエアのリスト">ハードウエア</a></li>
+</ul></div>
+  </div>
+
+  
+  </div>
+  </div>
+</div>
+</div>
+</div>
+	</div>
+</div>
+<div id="block-views-mews-new-mini-block" class="block-views-mews-new-mini-block block block-views block-odd">
+	<!-- Block title -->
+			<h2 class="title block-title">News</h2>
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<div class="view view-mews-new view-id-mews_new view-display-id-mini_block attachment view-dom-id-166cc25649ce4978b93195feca1bd9fe jquery-once-2-processed refresh-processed">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+    <div class="ds-1col node node-news node-odd published with-comments view-mode-list_item_3 clearfix">
+
+  
+  <div class="field field-name-news-date-very-short field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><span class="date-very-short">23 Dec</span></div></div></div><div class="field field-name-title-very-short field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><a href="https://openrtm.org/openrtm/ja/node/7296">RTミドルウエアコンテスト2024が...</a></div></div></div></div>
+
+  </div>
+  <div class="views-row views-row-2 views-row-even">
+    <div class="ds-1col node node-news node-even published with-comments view-mode-list_item_3 clearfix">
+
+  
+  <div class="field field-name-news-date-very-short field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><span class="date-very-short">9 Sep</span></div></div></div><div class="field field-name-title-very-short field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><a href="https://openrtm.org/openrtm/ja/news/rt_summercamp2024_240909_ja">RTミドルウエアサマーキャンプ202...</a></div></div></div></div>
+
+  </div>
+  <div class="views-row views-row-3 views-row-odd">
+    <div class="ds-1col node node-news node-odd published with-comments view-mode-list_item_3 clearfix">
+
+  
+  <div class="field field-name-news-date-very-short field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><span class="date-very-short">22 Jul</span></div></div></div><div class="field field-name-title-very-short field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><a href="https://openrtm.org/openrtm/ja/news/20240722_pkg-release">Ubuntu 24.04用のパッケージをリ...</a></div></div></div></div>
+
+  </div>
+  <div class="views-row views-row-4 views-row-even">
+    <div class="ds-1col node node-news node-even published with-comments view-mode-list_item_3 clearfix">
+
+  
+  <div class="field field-name-news-date-very-short field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><span class="date-very-short">7 Jun</span></div></div></div><div class="field field-name-title-very-short field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><a href="https://openrtm.org/openrtm/ja/news/20240607_openrtm-aist_2_0_2_release">OpenRTM-aist 2.0.2 をリリースし...</a></div></div></div></div>
+
+  </div>
+  <div class="views-row views-row-5 views-row-odd">
+    <div class="ds-1col node node-news node-odd published with-comments view-mode-list_item_3 clearfix">
+
+  
+  <div class="field field-name-news-date-very-short field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><span class="date-very-short">8 May</span></div></div></div><div class="field field-name-title-very-short field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><a href="https://openrtm.org/openrtm/ja/node/7272">ROBOMECH2024申し込み開始しました</a></div></div></div></div>
+
+  </div>
+  <div class="views-row views-row-6 views-row-even views-row-last">
+    <div class="ds-1col node node-news node-even published with-comments view-mode-list_item_3 clearfix">
+
+  
+  <div class="field field-name-news-date-very-short field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><span class="date-very-short">14 Dec</span></div></div></div><div class="field field-name-title-very-short field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><a href="https://openrtm.org/openrtm/ja/node/7259">RTミドルウエアコンテスト2023が...</a></div></div></div></div>
+
+  </div>
+    </div>
+  
+  
+  
+      
+<div class="more-link">
+  <span><span><a href="https://openrtm.org/openrtm/ja/news/new">
+    その他のNews  </a></span></span>
+</div>
+  
+  
+  
+</div>	</div>
+</div>
+<div id="block-panels-mini-about-us" class="block-panels-mini-about-us block block-panels-mini block-even">
+	<!-- Block title -->
+			<h2 class="title block-title">About us</h2>
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<div class="panel-display panel-1col clearfix" id="mini-panel-about_us">
+  <div class="panel-panel panel-col">
+    <div><div class="panel-pane pane-block pane-block-24 pane-block">
+  
+      
+  
+  <div class="pane-content">
+    <p><a href="https://openrtm.org/openrtm/node/1016">サイトポリシー</a> | <a href="https://openrtm.org/openrtm/node/247">サービス利用規約</a> | <a href="https://openrtm.org/openrtm/node/1185">個人情報保護方針</a></p>
+
+
+
+  </div>
+
+  
+  </div>
+</div>
+  </div>
+</div>
+	</div>
+</div>  </div>
+													</div>
+													<!-- Footer Right -->
+							<aside id="footer-right" class="grid-4 omega">
+								  <div class="region region-footer-right">
+    
+<div id="block-user-login" class="block-user-login block block-user block-odd">
+	<!-- Block title -->
+			<h2 class="title block-title">u-login</h2>
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<form action="https://openrtm.org/openrtm/ja/doc/casestudy/processing?destination=node/7232" method="post" id="user-login-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">ユーザー名 <span class="form-required" title="このフィールドは必須です。">*</span></label>
+ <input type="text" id="edit-name" name="name" value="" size="15" maxlength="60" class="form-text required">
+</div>
+<div class="form-item form-type-password form-item-pass">
+  <label for="edit-pass">パスワード <span class="form-required" title="このフィールドは必須です。">*</span></label>
+ <input type="password" id="edit-pass" name="pass" size="15" maxlength="128" class="form-text required">
+</div>
+<div class="item-list"><ul><li class="first"><a href="https://openrtm.org/openrtm/ja/user/touroku" title="新規ユーザアカウントの作成">アカウントの作成</a></li>
+<li class="last"><a href="https://openrtm.org/openrtm/ja/user/password" title="パスワードを再発行するためのメールをリクエスト">パスワードの再発行</a></li>
+</ul></div><input type="hidden" name="form_build_id" value="form-ulEHJVE4BifJK_5xR4fuzSfQxCMQq-Hd_uMPH6t8eOc">
+<input type="hidden" name="form_id" value="user_login_block">
+<div class="form-actions form-wrapper" id="edit-actions--2"><input type="submit" id="edit-submit--2" name="op" value="ログイン" class="form-submit"></div></div></form>	</div>
+</div>
+<div id="block-block-75" class="block-block-75 block block-block block-even">
+	<!-- Block title -->
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<p><a href="https://openrtm.github.io/">GitHub Pages（Webサイト）</a></p>
+
+<p><a href="https://github.com/OpenRTM">github リポジトリ</a></p>
+
+
+
+	</div>
+</div>
+<div id="block-menu-menu-user-login" class="block-menu-menu-user-login block block-menu block-odd">
+	<!-- Block title -->
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<ul class="menu clearfix"><li class="first last leaf id- mid-13923"><a href="https://openrtm.org/openrtm/ja/user/login" title="">ログイン</a></li>
+</ul>	</div>
+</div>  </div>
+							</aside>
+											</div>
+				</div>
+			</div>
+						<div class="container-12">
+				<div class="grid-12 clearfix">
+					<div class="footer-wrapper clearfix">
+						<!-- Region Footer -->
+						  <div class="region region-footer">
+    
+<div id="block-slack-invite-slack-invite-send-request" class="block-slack-invite-slack-invite-send-request block block-slack-invite block-even">
+	<!-- Block title -->
+			<h2 class="title block-title">Join our slack</h2>
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<form action="https://openrtm.org/openrtm/ja/doc/casestudy/processing" method="post" id="slack-invite-send-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-slack-email">
+  <label for="edit-slack-email">Email </label>
+ <input type="text" id="edit-slack-email" name="slack_email" value="" size="60" maxlength="128" class="form-text">
+<div class="description">Enter email address for slack invite.</div>
+</div>
+<input type="submit" id="edit-submit--3" name="op" value="送信" class="form-submit"><input type="hidden" name="form_build_id" value="form-nmOeewb-5CX5AJH0WqyoCAyE93OFC2Qr9TLA0Y8L2jI">
+<input type="hidden" name="form_id" value="slack_invite_send_form">
+</div></form>	</div>
+</div>
+<div id="block-block-72" class="block-block-72 block block-block block-odd">
+	<!-- Block title -->
+	
+	<!-- Block content -->
+	<div class="content block-content">
+		<p>Copyright © 2005-2020 National Institute of Advanced Industrial Science and Technology, Japan. All Rights Reserved.</p>
+
+
+
+	</div>
+</div>  </div>
+
+											</div>
+				</div>
+			</div>
+			<!-- Region map content -->
+					</footer>
+	</div>
+</div><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+da2a.targets=[
+{title:"Processing \u6d3b\u7528\u4e8b\u4f8b",url:"https:\/\/openrtm.org\/openrtm\/ja\/doc\/casestudy\/processing"},
+{title:"RT\u30df\u30c9\u30eb\u30a6\u30a8\u30a2\u30b3\u30f3\u30c6\u30b9\u30c82024\u304c\u958b\u50ac\u3055\u308c\u307e\u3057\u305f",url:"https:\/\/openrtm.org\/openrtm\/ja\/node\/7296"},
+{title:"RT\u30df\u30c9\u30eb\u30a6\u30a8\u30a2\u30b5\u30de\u30fc\u30ad\u30e3\u30f3\u30d72024\u304c\u884c\u308f\u308c\u307e\u3057\u305f",url:"https:\/\/openrtm.org\/openrtm\/ja\/news\/rt_summercamp2024_240909_ja"},
+{title:"Ubuntu 24.04\u7528\u306e\u30d1\u30c3\u30b1\u30fc\u30b8\u3092\u30ea\u30ea\u30fc\u30b9\u3057\u307e\u3057\u305f",url:"https:\/\/openrtm.org\/openrtm\/ja\/news\/20240722_pkg-release"},
+{title:"OpenRTM-aist 2.0.2 \u3092\u30ea\u30ea\u30fc\u30b9\u3057\u307e\u3057\u305f",url:"https:\/\/openrtm.org\/openrtm\/ja\/news\/20240607_openrtm-aist_2_0_2_release"},
+{title:"ROBOMECH2024\u7533\u3057\u8fbc\u307f\u958b\u59cb\u3057\u307e\u3057\u305f",url:"https:\/\/openrtm.org\/openrtm\/ja\/node\/7272"},
+{title:"RT\u30df\u30c9\u30eb\u30a6\u30a8\u30a2\u30b3\u30f3\u30c6\u30b9\u30c82023\u304c\u958b\u50ac\u3055\u308c\u307e\u3057\u305f",url:"https:\/\/openrtm.org\/openrtm\/ja\/node\/7259"}];
+da2a.html_done=true;if(da2a.script_ready&&!da2a.done)da2a.init();da2a.script_load();
+//--><!]]>
+</script>
+
+
+
+
+
+
+
+	
+<meta name="Generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="https://openrtm.org/openrtm/ja/doc/casestudy/processing">
+<link rel="shortlink" href="https://openrtm.org/openrtm/ja/node/7232">
+<link rel="top" href="https://openrtm.org/openrtm/ja/doc/casestudy">
+<link rel="prev" href="https://openrtm.org/openrtm/ja/content/build_ubuntu_codeblocks">
+<link rel="up" href="https://openrtm.org/openrtm/ja/doc/casestudy">
+<link rel="shortcut icon" href="https://openrtm.org/openrtm/sites/default/files/favicon.ico2" type="application/octet-stream">
+
+	<!--[if lte IE 7]>
+		<div style=' text-align:center; clear: both; padding:0 0 0 15px; position: relative;'>
+			<a href="//windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+				<img src="//storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
+			</a>
+		</div>
+	<![endif]-->
+
+	<title>Error | OpenRTM-aist</title>
+
+	<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_KJyHl1hSJsEdkBASgPIekhH_AKCUnouJ6iBeWdvCB4o.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_ArLuzM5BHlgFoqj-OHHU6N-g8-F57ykMZudmPTbcBdw.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_u9kW64KVqORl17S6qVAoaz-TFZ9ywb48alg74boORSo.css" media="all">
+<style type="text/css" media="screen">
+<!--/*--><![CDATA[/*><!--*/
+body{font-size:75%  !important;}body.textsize-50{font-size:50% !important;}body.textsize-55{font-size:55% !important;}body.textsize-60{font-size:60% !important;}body.textsize-65{font-size:65% !important;}body.textsize-70{font-size:70% !important;}body.textsize-75{font-size:75% !important;}body.textsize-80{font-size:80% !important;}body.textsize-85{font-size:85% !important;}body.textsize-90{font-size:90% !important;}body.textsize-95{font-size:95% !important;}body.textsize-100{font-size:100% !important;}body.textsize-105{font-size:105% !important;}body.textsize-110{font-size:110% !important;}body.textsize-115{font-size:115% !important;}body.textsize-120{font-size:120% !important;}body.textsize-125{font-size:125% !important;}body.textsize-130{font-size:130% !important;}body.textsize-135{font-size:135% !important;}body.textsize-140{font-size:140% !important;}body.textsize-145{font-size:145% !important;}body.textsize-150{font-size:150% !important;}
+
+/*]]>*/-->
+</style>
+<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_fXSZ8RxE79y-nKzp2fDPMyqOy9AHUPYvzxgY7d7kHA4.css" media="all">
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+.panels-flexible-new .panels-flexible-region {
+  padding: 0;
+}
+
+.panels-flexible-new .panels-flexible-region-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-new .panels-flexible-region-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-new .panels-flexible-region-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-new .panels-flexible-column {
+  padding: 0;
+}
+
+.panels-flexible-new .panels-flexible-column-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-new .panels-flexible-column-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-new .panels-flexible-column-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-new .panels-flexible-row {
+  padding: 0 0 0.5em 0;
+  margin: 0;
+}
+
+.panels-flexible-new .panels-flexible-row-last {
+  padding-bottom: 0;
+}
+
+.panels-flexible-column-new-main {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-new-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-new {
+  width: auto;
+}
+
+.panels-flexible-region-new-center {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-new-main-row-inside {
+  padding-right: 0px;
+}
+
+
+/*]]>*/-->
+</style>
+<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_xBLuEr99rX-887vyPcvJ-J5uymhdMsaEktfyZAmTg3o.css" media="all"><div style="position: static;"><div style="height: 1px; width: 1px; position: absolute; z-index: 100000; top: 0px; visibility: hidden;"><iframe id="a2a_sm_ifr" title="AddToAny Utility Frame" aria-hidden="true" src="./Processing 活用事例 _ OpenRTM-aist_files/sm.25.html" style="height: 1px; width: 1px; border: 0px; left: 0px; top: 0px; position: absolute; z-index: 100000; display: none;"></iframe></div></div>
+<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_w3ymEvXQas201r9yUlkZnlisfRxa9I8QaczfpMllgSs.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./Processing 活用事例 _ OpenRTM-aist_files/css_6aLufD7PZqSyVM8ltYiEB-ogR_n8n1SD85r-m6JROu4.css" media="all">
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_s7yA-hwRxnKty__ED6DuqmTMKG39xvpRyrtyCrbWH4M.js.ダウンロード"></script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_CHyih5wYCJakJEd60obUewTPHjsfkt9FBCocSm7nnm4.js.ダウンロード"></script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_i_msAU5XDV6XNFAO124fjuB5WFJbUIxp-jTXEznK5mc.js.ダウンロード"></script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_PL_fpGwEK1vZZm7p8mM3TrRAIIjq4_USYnirOiNtyRA.js.ダウンロード"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+  var textsizeCookieExpires = 365;
+  var textsizeCookieDomain = "/openrtm/";
+  var textsizeElement = "body";
+  var textsizeElementClass = "";
+  var textsizeIncrement = 5;
+  var textsizeNormal = 75;
+  var textsizeMinimum = 50;
+  var textsizeMaximum = 150;
+  var textsizeIncrementDisplay = 7;
+  var textsizeNormalDisplay = 100;
+  var textsizeDisplay = 1;
+  var textsizeMinT = "<abbr title=\"最小\" class=\"textsize\">Min.</abbr> ";
+  var textsizeMaxT = "<abbr title=\"最大\" class=\"textsize\">Max.</abbr> ";
+  var textsizeCurrentText = "Current Size";
+  var textsizeReset = 0;
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_5HaahOJq8_wyTsjHvvTlg1IH6_oG6l0M4jmzDGncT60.js.ダウンロード"></script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "UA-772771-2", {"groups":"default","cookie_domain":".openrtm.org","anonymize_ip":true});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.a2a_config=window.a2a_config||{};window.da2a={done:false,html_done:false,script_ready:false,script_load:function(){var a=document.createElement('script'),s=document.getElementsByTagName('script')[0];a.type='text/javascript';a.async=true;a.src='https://static.addtoany.com/menu/page.js';s.parentNode.insertBefore(a,s);da2a.script_load=function(){};},script_onready:function(){da2a.script_ready=true;if(da2a.html_done)da2a.init();},init:function(){for(var i=0,el,target,targets=da2a.targets,length=targets.length;i<length;i++){el=document.getElementById('da2a_'+(i+1));target=targets[i];a2a_config.linkname=target.title;a2a_config.linkurl=target.url;if(el){a2a.init('page',{target:el});el.id='';}da2a.done=true;}da2a.targets=[];}};(function ($){Drupal.behaviors.addToAny = {attach: function (context, settings) {if (context !== document && window.da2a) {if(da2a.script_ready)a2a.init_all();da2a.script_load();}}}})(jQuery);a2a_config.callbacks=a2a_config.callbacks||[];a2a_config.callbacks.push({ready:da2a.script_onready});a2a_config.overlays=a2a_config.overlays||[];a2a_config.templates=a2a_config.templates||{};
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_5A4ROVE-RBroQWrIjYmrSrEgnx6QSxg4M572DlFvt8Q.js.ダウンロード"></script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_q_JceOZiGxlu0vuxz_bWtbw4h_eBWRZLeCMu9tY7f64.js.ダウンロード"></script>
+<script type="text/javascript" src="./Processing 活用事例 _ OpenRTM-aist_files/js_vR22exJf36SHgS7c394Jdf4eiDe3KmrEzc_88iV-uF4.js.ダウンロード"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/openrtm\/","pathPrefix":"ja\/","setHasJsCookie":0,"ajaxPageState":{"theme":"theme935","theme_token":"gw8uIGuKEcD294ox1iuaqLiqrCS_tFK75UDTKPTL_EY","jquery_version":"1.8","js":{"0":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.8\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/form-single-submit.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/entityreference\/js\/entityreference.js":1,"sites\/all\/modules\/project_issue\/js\/project-issue.js":1,"public:\/\/languages\/ja_jOnCplnBC--xjz0l8AIHej5LnXnRgVARvAOcslVTjck.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"1":1,"sites\/all\/modules\/textsize\/jquery.textsize.js":1,"misc\/jquery.cookie.js":1,"sites\/default\/modules\/tm_animate\/js\/wow.js":1,"sites\/default\/modules\/node_helper\/node_helper.js":1,"sites\/all\/modules\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"https:\/\/openrtm.org\/openrtm\/sites\/default\/files\/googleanalytics\/js?ssivwh":1,"2":1,"3":1,"sites\/default\/modules\/tm_block_bg\/js\/tm_block_bg_video.js":1,"sites\/default\/modules\/tm_block_bg\/js\/jquery.mb.YTPlayer.js":1,"sites\/default\/modules\/tm_block_bg\/js\/tm_block_bg_parallax.js":1,"sites\/default\/modules\/tm_block_bg\/js\/jquery.stellar.min.js":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/sfsmallscreen.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/libraries\/superfish\/supersubs.js":1,"sites\/all\/modules\/superfish\/superfish.js":1,"sites\/all\/themes\/theme935_org\/js\/theme935.core.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.loader.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.debouncedresize.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.mobilemenu.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.easing.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.ui.totop.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.cookie.js":1,"sites\/all\/themes\/theme935_org\/js\/tm-stick-up.js":1,"sites\/all\/themes\/theme935_org\/js\/tformer.js":1,"sites\/all\/themes\/theme935_org\/js\/device.min.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.mousewheel.min.js":1,"sites\/all\/themes\/theme935_org\/js\/jquery.simplr.smoothscroll.min.js":1,"sites\/all\/themes\/theme935_org\/js\/migrate.js":1,"public:\/\/cpn\/global.js":1,"public:\/\/cpn\/superfish-2.js":1,"4":1,"5":1,"6":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/footnotes\/footnotes.css":1,"modules\/node\/node.css":1,"modules\/poll\/poll.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/video_filter\/video_filter.css":1,"sites\/all\/modules\/youtube\/css\/youtube.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/project_issue\/project_issue.css":1,"sites\/all\/modules\/project\/release\/project_release.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/pearwiki_filter\/pearwiki_filter.css":1,"0":1,"sites\/all\/modules\/textsize\/textsize.css":1,"sites\/default\/modules\/tm_animate\/css\/animate.css":1,"sites\/default\/modules\/tm_font_awesome\/css\/font-awesome.css":1,"modules\/locale\/locale.css":1,"sites\/all\/modules\/panels\/plugins\/layouts\/threecol_33_34_33_stacked\/threecol_33_34_33_stacked.css":1,"sites\/all\/modules\/panels\/plugins\/layouts\/flexible\/flexible.css":1,"1":1,"sites\/all\/modules\/panels\/plugins\/layouts\/onecol\/onecol.css":1,"sites\/default\/modules\/tm_follow\/css\/tm_follow.css":1,"sites\/all\/modules\/addtoany\/addtoany.css":1,"sites\/all\/themes\/theme935_org\/css\/maintenance-page.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/libraries\/superfish\/css\/superfish-smallscreen.css":1,"sites\/all\/themes\/theme935_org\/css\/boilerplate.css":1,"sites\/all\/themes\/theme935_org\/css\/style.css":1,"sites\/all\/themes\/theme935_org\/css\/skeleton.css":1,"sites\/all\/themes\/theme935_org\/css\/custom.css":1,"cpn_global":1,"public:\/\/cpn\/superfish-2.css":1,"public:\/\/cpn\/search-form.css":1,"public:\/\/cpn\/tm_follow-site.css":1,"public:\/\/cpn\/system-user-menu.css":1,"public:\/\/cpn\/locale-language.css":1,"public:\/\/cpn\/panels_mini-front_page_block.css":1,"public:\/\/cpn\/views-mews_new-mini_block.css":1,"public:\/\/cpn\/user-login.css":1}},"colorbox":{"opacity":"0.85","current":"{current} \/ {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"\u9589\u3058\u308b","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","file_public_path":"\/openrtm\/sites\/default\/files","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"node_helper":{"select_required_function":{"#value":{"hide_the_form_in_preview":0,"hide_the_teaser_in_preview":0,"make_a_node_editing_tab_to_screw_icon":0}},"author_user_reference":{"#value":""},"search_field_name":{"#value":""},"the_nest_of_these_form_the_table":{"#value":""},"the_nest_of_these_form_the_table_container":{"#value":""},"the_nest_of_these_form_the_table_item":{"#value":""},"add_class_into_form_tag":{"#value":""},"simplify_the_control_of_the_date_field":{"#value":""},"simplify_the_multi_field":{"#value":""},"class_for_actions":{"#value":""},"class_for_submit":{"#value":""},"class_for_preview":{"#value":""},"class_for_delete":{"#value":""},"class_for_cancel":{"#value":""}},"views":{"ajax_path":"\/openrtm\/ja\/views\/ajax","ajaxViews":{"views_dom_id:166cc25649ce4978b93195feca1bd9fe":{"view_name":"mews_new","view_display_id":"mini_block","view_args":"","view_path":"node\/7232","view_base_path":"news\/new","view_dom_id":"166cc25649ce4978b93195feca1bd9fe","pager_element":0}}},"urlIsAjaxTrusted":{"\/openrtm\/ja\/views\/ajax":true,"\/openrtm\/ja\/doc\/casestudy\/processing":true,"\/openrtm\/ja\/doc\/casestudy\/processing?destination=node\/7232":true},"googleanalytics":{"account":["UA-772771-2"],"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1,"trackDomainMode":1},"superfish":{"2":{"id":"2","sf":{"animation":{"opacity":"show","height":"show"},"speed":"fast"},"plugins":{"smallscreen":{"mode":"window_width","breakpointUnit":"px","expandText":"\u5c55\u958b","collapseText":"\u6298\u308a\u305f\u305f\u3080","title":"OpenRTM-aist (ja)"},"supposition":true,"supersubs":true}}}});
+//--><!]]>
+</script>
+
+	<!--[if LT IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<script>
+		if (jQuery.cookie('the_cookie') != 0) {
+			document.write('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">')
+		} else {
+			document.write('<meta name="viewport" content="width=device-width">')
+		}
+	</script><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+
+	<div id="skip-link">
+		<a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#main-content" class="element-invisible element-focusable">Skip to main content</a>
+	</div>
+
+	
+	<div id="page-wrapper">
+		<div id="page">
+			<!-- Header
+			======================================================================================= -->
+			<header id="header" role="banner">
+				<div class="section clearfix">
+					<!-- Logo -->
+											<div id="logo" class="logo">
+															<a href="https://openrtm.org/openrtm/ja" title="ホーム" rel="home" id="img-logo" class="img-logo">
+									<img src="./Processing 活用事例 _ OpenRTM-aist_files/logo.png" alt="ホーム">
+								</a>
+															<h1 title="OpenRTM-aist" id="site-name" class="site-name">
+									<a href="https://openrtm.org/openrtm/ja" title="OpenRTM-aist">OpenRTM-aist</a>
+								</h1>
+															<div title="The power to connect" id="slogan" class="slogan">
+									The power to connect								</div>
+													</div>
+									</div>
+			</header>
+
+			<!-- Content
+			======================================================================================= -->
+			<div id="main-wrapper">
+				<div id="main" class="main clearfix">
+					<div id="content" class="content page-content content-main column" role="main">
+						<div class="section">
+							<a id="main-content"></a>
+							<!-- Page title -->
+															<h1 class="title page-title" id="page-title">Error</h1>
+							
+							<!-- Page content -->
+							<div id="highlighted" class="highlighted">
+								The website encountered an unexpected error. Please try again later.							</div>
+
+							<!-- System messages -->
+															<div id="messages">
+									<div class="section clearfix">
+										<div class="messages error">
+<h2 class="element-invisible">Error message</h2>
+<em class="placeholder">Error</em>: Call to undefined method Text_Wiki_Parse::Text_Wiki_Parse() in <em class="placeholder">Text_Wiki_Parse_Delimiter-&gt;Text_Wiki_Parse_delimiter()</em> (line <em class="placeholder">52</em> of <em class="placeholder">sites/all/libraries/Text_Wiki/Text/Wiki/Parse/Default/Delimiter.php</em>).</div>
+									</div>
+								</div>
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#" id="backtotop" style="right: 50%; margin-right: -715px; display: none;"><span id="toTopHover"></span><span id="toTopHover"></span></a><a href="https://openrtm.org/openrtm/ja/doc/casestudy/processing#" id="backtotop"></a></body></html>
