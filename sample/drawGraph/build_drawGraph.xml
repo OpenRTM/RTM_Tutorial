@@ -1,0 +1,60 @@
+﻿<!--
+# -*- Buildfile -*-
+# @file  build_drawGraph.xml
+# @brief RTComponent makefile for "drawGraph component"
+# @date  $Date$
+#
+# $Id$
+ -->
+<project name="drawGraph" default="generatedoc">
+	<property name="source" value="src" />
+	<property name="dest" value="bin" />
+	<property name="doc" value="doc" />
+	<property name="testsource" value="test/src" />
+	<property environment="env" />
+
+	<target name="mkdir">
+		<mkdir dir="${dest}" />
+	</target>
+
+	<target name="compile" depends="mkdir">
+		<javac includeantruntime="false" srcdir="${source}" destdir="${dest}">
+			<classpath>
+				<fileset dir="${env.RTM_JAVA_ROOT}/jar">
+					<include name="*.jar"/>
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="generatejar" depends="compile">
+		<delete file=".jar" />
+		<jar destfile=".jar"
+		basedir="${source}/"
+		excludes="" />
+	</target>
+
+	<target name="generatedoc" depends="generatejar">
+		<javadoc 
+                        Locale="ja_JP"
+                        destdir="${doc}"
+                        docencoding="UTF-8"
+			author="true" doctitle="drawGraph" 
+			nodeprecated="false" nodeprecatedlist="false" 
+                        noindex="false" nonavbar="false" notree="false" 
+			package="yes" splitindex="true" 
+                        use="true" version="true" charset="UTF-8" 
+                        >
+			<classpath>
+				<fileset dir="${env.RTM_JAVA_ROOT}/jar">
+					<include name="*.jar"/>
+				</fileset>
+			</classpath>
+			<sourcefiles>
+				<fileset dir="${source}">
+					<include name="**/*.pde"/>
+				</fileset>
+                	</sourcefiles>
+                </javadoc>
+	</target>
+</project>
