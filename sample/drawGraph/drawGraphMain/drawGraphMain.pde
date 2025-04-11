@@ -30,9 +30,16 @@ public void setup() {
   ec0Ref = ec0c._ptr();
   comp.setPApplet(this);
 
+  registerMethod("dispose", this);
 }
 
 
 public void draw() {
   ec0Ref.tick();
+}
+
+void dispose()
+{
+  Manager.instance().terminate(0);
+  Manager.instance().join();
 }
