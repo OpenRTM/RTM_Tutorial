@@ -126,7 +126,9 @@ RTC::ReturnCode_t ArmController::onFinalize()
 
 RTC::ReturnCode_t ArmController::onActivated(RTC::UniqueId /*ec_id*/)
 {
+    //サーボをONにするコマンドを実行
     m_JARA_ARM_ManipulatorCommonInterface_Common->servoON();
+    //アームを原点復帰位置に移動する
     m_JARA_ARM_ManipulatorCommonInterface_Middle->goHome();
   return RTC::RTC_OK;
 }
@@ -134,6 +136,7 @@ RTC::ReturnCode_t ArmController::onActivated(RTC::UniqueId /*ec_id*/)
 
 RTC::ReturnCode_t ArmController::onDeactivated(RTC::UniqueId /*ec_id*/)
 {
+    //サーボをOFFにするコマンドを実行
     m_JARA_ARM_ManipulatorCommonInterface_Common->servoOFF();
   return RTC::RTC_OK;
 }
@@ -145,10 +148,14 @@ RTC::ReturnCode_t ArmController::onDeactivated(RTC::UniqueId /*ec_id*/)
 
 RTC::ReturnCode_t ArmController::onExecute(RTC::UniqueId /*ec_id*/)
 {
+    //コンフィギュレーションパラメータの変更時のみ実行
     if (getConfigService().isChanged())
     {
+        //コンフィギュレーションパラメータを更新する
         updateParameters("default");
+        //CarPosWithElbow型データに手先の位置姿勢を格納する
         JARA_ARM::CarPosWithElbow pose;
+        //姿勢は固定
         pose.carPos[0][0] = -1;
         pose.carPos[0][1] = 0;
         pose.carPos[0][2] = 0;
@@ -158,17 +165,18 @@ RTC::ReturnCode_t ArmController::onExecute(RTC::UniqueId /*ec_id*/)
         pose.carPos[2][0] = 0;
         pose.carPos[2][1] = 0;
         pose.carPos[2][2] = -1;
+        //コンフィギュレーションパラメータを位置情報として格納する
         pose.carPos[0][3] = m_pos_x;
         pose.carPos[1][3] = m_pos_y;
         pose.carPos[2][3] = m_pos_z;
         pose.elbow = 0;
         pose.structFlag = 0;
 
-        std::cout << "start" << std::endl;
 
+        //絶対値で指定した目標位置に移動するコマンドを実行
+        //移動完了まで処理は戻らない
         m_JARA_ARM_ManipulatorCommonInterface_Middle->moveLinearCartesianAbs(pose);
 
-        std::cout << "finish" << std::endl;
     }
 
   return RTC::RTC_OK;
