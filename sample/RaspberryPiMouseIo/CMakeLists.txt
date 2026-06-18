@@ -1,10 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
-if(POLICY CMP0040)
-  cmake_policy(SET CMP0040 OLD)
-endif()
-if(POLICY CMP0053)
-  cmake_policy(SET CMP0053 OLD)
-endif()
+cmake_minimum_required(VERSION 3.16)
 
 project(RaspberryPiMouseIo)
 string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
@@ -86,7 +80,7 @@ set(OTHER_SRCS CMakeLists.txt
                RTC.xml RaspberryPiMouseIo.conf rtc.conf)
 
 # check python installed
-find_package(PythonInterp)
+find_package(Python)
 
 if(WIN32)
    set(OPENRTM_SHARE_PREFIX "OpenRTM-aist/${RTM_VER}/Components/${PROJECT_TYPE}")
@@ -101,10 +95,8 @@ endif()
 
 
 foreach(target ${EXEC_FILES})
-  add_custom_command( TARGET ${PROJECT_NAME} POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy
-        ${PROJECT_SOURCE_DIR}/${target} ${PROJECT_BINARY_DIR}
-  )
+   file(COPY ${PROJECT_SOURCE_DIR}/${target}
+      DESTINATION ${PROJECT_BINARY_DIR})
 endforeach()
 
 install(PROGRAMS ${EXEC_FILES} DESTINATION "${INSTALL_PREFIX}"

@@ -1,7 +1,4 @@
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-if(POLICY CMP0048)
-  cmake_policy(SET CMP0048 OLD)
-endif()
+cmake_minimum_required(VERSION 3.16)
 
 project(RobotController)
 string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
